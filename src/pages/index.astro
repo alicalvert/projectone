@@ -1,11 +1,567 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+
+	<!-- Nav -->
+	<nav>
+		<div class="container nav-inner">
+			<span class="logo">Project One</span>
+			<a href="#contact" class="btn btn-sm">Get a Free Audit</a>
+		</div>
+	</nav>
+
+	<!-- Hero -->
+	<section class="hero">
+		<div class="container">
+			<p class="eyebrow">SEO Agency</p>
+			<h1>Rank Higher.<br />Grow Faster.</h1>
+			<p class="hero-sub">We help businesses get found on Google and turn organic traffic into real revenue.</p>
+			<div class="hero-cta">
+				<a href="#contact" class="btn">Get a Free SEO Audit</a>
+				<a href="#services" class="btn btn-outline">See What We Do</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="section" id="services">
+		<div class="container">
+			<h2 class="section-title">What We Do</h2>
+			<p class="section-sub">End-to-end SEO services that move the needle.</p>
+			<div class="grid">
+				<div class="card">
+					<div class="card-icon">🔍</div>
+					<h3>Technical SEO</h3>
+					<p>We audit and fix the under-the-hood issues that stop Google from crawling and indexing your site properly.</p>
+				</div>
+				<div class="card">
+					<div class="card-icon">✍️</div>
+					<h3>Content Strategy</h3>
+					<p>Keyword research, content planning, and writing that targets the right searches at every stage of the funnel.</p>
+				</div>
+				<div class="card">
+					<div class="card-icon">🔗</div>
+					<h3>Link Building</h3>
+					<p>High-quality backlinks from authoritative sites that boost your domain authority and rankings.</p>
+				</div>
+				<div class="card">
+					<div class="card-icon">📊</div>
+					<h3>SEO Reporting</h3>
+					<p>Clear, jargon-free monthly reports so you always know exactly what's working and what's next.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Us -->
+	<section class="section section-dark" id="why">
+		<div class="container">
+			<h2 class="section-title">Why Project One?</h2>
+			<div class="stats">
+				<div class="stat">
+					<span class="stat-number">3x</span>
+					<span class="stat-label">Average traffic increase in 6 months</span>
+				</div>
+				<div class="stat">
+					<span class="stat-number">150+</span>
+					<span class="stat-label">Clients ranked on page one</span>
+				</div>
+				<div class="stat">
+					<span class="stat-number">98%</span>
+					<span class="stat-label">Client retention rate</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Case Studies -->
+	<section class="section" id="case-studies">
+		<div class="container">
+			<h2 class="section-title">Client Results</h2>
+			<p class="section-sub">Real businesses, real growth.</p>
+			<div class="carousel">
+				<div class="carousel-track" id="carouselTrack">
+
+					<div class="case-card">
+						<div class="case-header">
+							<div>
+								<p class="case-client">Jolly Good Loans</p>
+								<a href="https://jollygoodloans.com" target="_blank" rel="noopener" class="case-url">jollygoodloans.com</a>
+							</div>
+							<span class="case-tag">Finance</span>
+						</div>
+						<p class="case-challenge"><strong>Challenge:</strong> Jolly Good Loans had strong products but virtually no organic presence — competitors dominated every high-intent keyword in the UK personal loans market.</p>
+						<div class="case-stats">
+							<div class="case-stat">
+								<span class="case-number">312%</span>
+								<span class="case-label">Organic traffic increase</span>
+							</div>
+							<div class="case-stat">
+								<span class="case-number">#1</span>
+								<span class="case-label">Ranking for "jolly good loans" & key terms</span>
+							</div>
+							<div class="case-stat">
+								<span class="case-number">6mo</span>
+								<span class="case-label">Time to results</span>
+							</div>
+						</div>
+						<p class="case-result"><strong>What we did:</strong> Full technical audit, targeted content around loan comparison keywords, and a focused link-building campaign in the personal finance niche. Jolly Good Loans went from page four to page one for their core terms within six months.</p>
+					</div>
+
+				</div>
+				<div class="carousel-controls">
+					<button class="carousel-btn" id="prevBtn" aria-label="Previous" disabled>&#8592;</button>
+					<div class="carousel-dots" id="carouselDots">
+						<span class="dot active"></span>
+					</div>
+					<button class="carousel-btn" id="nextBtn" aria-label="Next" disabled>&#8594;</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section class="section" id="contact">
+		<div class="container container-narrow">
+			<h2 class="section-title">Get Your Free SEO Audit</h2>
+			<p class="section-sub">Tell us about your site and we'll show you exactly where the opportunities are.</p>
+			<form class="form" netlify>
+				<div class="form-row">
+					<input type="text" name="name" placeholder="Your name" required />
+					<input type="email" name="email" placeholder="Your email" required />
+				</div>
+				<input type="url" name="website" placeholder="Your website URL" required />
+				<textarea name="message" placeholder="Tell us about your business and goals" rows="4"></textarea>
+				<button type="submit" class="btn btn-full">Send My Free Audit Request</button>
+			</form>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<p>&copy; {new Date().getFullYear()} Project One. All rights reserved.</p>
+		</div>
+	</footer>
+
 </Layout>
+
+<style>
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.container-narrow {
+		max-width: 680px;
+	}
+
+	/* Nav */
+	nav {
+		position: sticky;
+		top: 0;
+		background: rgba(255,255,255,0.95);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid #f0f0f0;
+		z-index: 100;
+		padding: 1rem 0;
+	}
+
+	.nav-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-weight: 800;
+		font-size: 1.25rem;
+		color: #111827;
+		letter-spacing: -0.02em;
+	}
+
+	/* Buttons */
+	.btn {
+		display: inline-block;
+		background: #2563eb;
+		color: #fff;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		text-decoration: none;
+		border: none;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+	.btn:hover {
+		background: #1d4ed8;
+	}
+
+	.btn-sm {
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+	}
+
+	.btn-outline {
+		background: transparent;
+		border: 2px solid #2563eb;
+		color: #2563eb;
+	}
+
+	.btn-outline:hover {
+		background: #2563eb;
+		color: #fff;
+	}
+
+	.btn-full {
+		width: 100%;
+		text-align: center;
+		padding: 1rem;
+		font-size: 1rem;
+	}
+
+	/* Hero */
+	.hero {
+		padding: 6rem 0 5rem;
+		background: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%);
+	}
+
+	.eyebrow {
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #2563eb;
+		margin-bottom: 1rem;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.5rem, 6vw, 4.5rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.25rem;
+		color: #111827;
+	}
+
+	.hero-sub {
+		font-size: 1.2rem;
+		color: #4b5563;
+		max-width: 520px;
+		margin-bottom: 2rem;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	/* Sections */
+	.section {
+		padding: 5rem 0;
+	}
+
+	.section-dark {
+		background: #111827;
+		color: #fff;
+	}
+
+	.section-title {
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		margin-bottom: 0.75rem;
+		text-align: center;
+	}
+
+	.section-sub {
+		font-size: 1.1rem;
+		color: #6b7280;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-dark .section-sub {
+		color: #9ca3af;
+	}
+
+	/* Cards */
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.card {
+		background: #f9fafb;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 2rem;
+	}
+
+	.card-icon {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.card h3 {
+		font-size: 1.1rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+
+	.card p {
+		color: #6b7280;
+		font-size: 0.95rem;
+	}
+
+	/* Stats */
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+		text-align: center;
+	}
+
+	.stat-number {
+		display: block;
+		font-size: 3rem;
+		font-weight: 800;
+		color: #60a5fa;
+		letter-spacing: -0.03em;
+	}
+
+	.stat-label {
+		display: block;
+		font-size: 0.95rem;
+		color: #9ca3af;
+		margin-top: 0.25rem;
+	}
+
+	/* Form */
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.form input,
+	.form textarea {
+		width: 100%;
+		padding: 0.85rem 1rem;
+		border: 1px solid #d1d5db;
+		border-radius: 8px;
+		font-size: 0.95rem;
+		font-family: inherit;
+		color: #111827;
+		transition: border-color 0.2s;
+	}
+
+	.form input:focus,
+	.form textarea:focus {
+		outline: none;
+		border-color: #2563eb;
+	}
+
+	.form textarea {
+		resize: vertical;
+	}
+
+	/* Footer */
+	footer {
+		background: #f9fafb;
+		border-top: 1px solid #e5e7eb;
+		padding: 2rem 0;
+		text-align: center;
+		color: #6b7280;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 600px) {
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	/* Carousel */
+	.carousel {
+		position: relative;
+	}
+
+	.carousel-track {
+		display: flex;
+		overflow: hidden;
+		gap: 1.5rem;
+	}
+
+	.case-card {
+		min-width: 100%;
+		background: #f9fafb;
+		border: 1px solid #e5e7eb;
+		border-radius: 16px;
+		padding: 2.5rem;
+		flex-shrink: 0;
+		transition: transform 0.4s ease;
+	}
+
+	.case-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1.5rem;
+	}
+
+	.case-client {
+		font-size: 1.3rem;
+		font-weight: 800;
+		color: #111827;
+		margin-bottom: 0.2rem;
+	}
+
+	.case-url {
+		font-size: 0.875rem;
+		color: #2563eb;
+		text-decoration: none;
+	}
+
+	.case-url:hover {
+		text-decoration: underline;
+	}
+
+	.case-tag {
+		background: #dbeafe;
+		color: #1d4ed8;
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 0.3rem 0.75rem;
+		border-radius: 999px;
+	}
+
+	.case-challenge {
+		color: #4b5563;
+		margin-bottom: 2rem;
+		font-size: 0.95rem;
+	}
+
+	.case-stats {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		background: #111827;
+		border-radius: 12px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.case-number {
+		display: block;
+		font-size: 2rem;
+		font-weight: 800;
+		color: #60a5fa;
+		letter-spacing: -0.02em;
+	}
+
+	.case-label {
+		display: block;
+		font-size: 0.8rem;
+		color: #9ca3af;
+		margin-top: 0.25rem;
+	}
+
+	.case-result {
+		color: #4b5563;
+		font-size: 0.95rem;
+	}
+
+	.carousel-controls {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.carousel-btn {
+		background: #f3f4f6;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		width: 2.5rem;
+		height: 2.5rem;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+	.carousel-btn:hover:not(:disabled) {
+		background: #e5e7eb;
+	}
+
+	.carousel-btn:disabled {
+		opacity: 0.35;
+		cursor: default;
+	}
+
+	.carousel-dots {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #d1d5db;
+		transition: background 0.2s;
+	}
+
+	.dot.active {
+		background: #2563eb;
+	}
+
+	@media (max-width: 600px) {
+		.case-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.case-header {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+	}
+</style>
+
+<script>
+	const track = document.getElementById('carouselTrack');
+	const prevBtn = document.getElementById('prevBtn');
+	const nextBtn = document.getElementById('nextBtn');
+	const dots = document.querySelectorAll('.dot');
+	const cards = document.querySelectorAll('.case-card');
+	let current = 0;
+
+	function goTo(index: number) {
+		current = index;
+		(track as HTMLElement).style.transform = `translateX(-${current * 100}%)`;
+		dots.forEach((d, i) => d.classList.toggle('active', i === current));
+		(prevBtn as HTMLButtonElement).disabled = current === 0;
+		(nextBtn as HTMLButtonElement).disabled = current === cards.length - 1;
+	}
+
+	prevBtn?.addEventListener('click', () => goTo(current - 1));
+	nextBtn?.addEventListener('click', () => goTo(current + 1));
+	dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+	goTo(0);
+</script>
