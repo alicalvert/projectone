@@ -5,169 +5,350 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 
 	<!-- Nav -->
-	<nav>
+	<nav id="nav" data-theme="dark">
 		<div class="container nav-inner">
-			<span class="logo">Project One</span>
-			<a href="#contact" class="btn btn-sm">Get a Free Audit</a>
+			<span class="logo"><span style="font-weight:300">project_</span>one</span>
+			<a href="#contact" class="btn-nav">Request an Audit</a>
 		</div>
 	</nav>
 
-	<!-- Hero -->
-	<section class="hero">
-		<div class="container">
-			<p class="eyebrow">SEO Agency</p>
-			<h1>Rank Higher.<br />Grow Faster.</h1>
-			<p class="hero-sub">We help businesses get found on Google and turn organic traffic into real revenue.</p>
-			<div class="hero-cta">
-				<a href="#contact" class="btn">Get a Free SEO Audit</a>
-				<a href="#services" class="btn btn-outline">See What We Do</a>
+	<!-- Hero — DARK -->
+	<section class="hero" id="hero" data-nav-theme="dark">
+<div class="container">
+			<p class="eyebrow reveal">SEO · GEO · AI Visibility</p>
+			<h1 class="reveal reveal-delay-1">Rank everywhere<br />people search.</h1>
+			<p class="hero-sub reveal reveal-delay-2">Google. Perplexity. ChatGPT. We get you found wherever people search.</p>
+			<div class="hero-cta reveal reveal-delay-3">
+				<a href="#contact" class="btn">Request a Visibility Audit</a>
+				<a href="#services" class="btn btn-ghost">See What We Do</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- Services -->
-	<section class="section" id="services">
+	<!-- Services — LIGHT -->
+	<section class="section light" id="services" data-nav-theme="light">
 		<div class="container">
-			<h2 class="section-title">What We Do</h2>
-			<p class="section-sub">End-to-end SEO services that move the needle.</p>
-			<div class="grid">
-				<div class="card">
-					<div class="card-icon">🔍</div>
+			<div class="section-header reveal">
+				<h2>What We Do</h2>
+				<p class="section-sub">Search has changed. We keep you ahead of it.</p>
+			</div>
+			<div class="services-grid">
+				<div class="service-box reveal">
+					<span class="service-num">01</span>
 					<h3>Technical SEO</h3>
-					<p>We audit and fix the under-the-hood issues that stop Google from crawling and indexing your site properly.</p>
+					<p>We audit and fix the under-the-hood issues stopping Google from crawling and ranking your site.</p>
 				</div>
-				<div class="card">
-					<div class="card-icon">✍️</div>
+				<div class="service-box reveal">
+					<span class="service-num">02</span>
 					<h3>Content Strategy</h3>
 					<p>Keyword research, content planning, and writing that targets the right searches at every stage of the funnel.</p>
 				</div>
-				<div class="card">
-					<div class="card-icon">🔗</div>
+				<div class="service-box reveal">
+					<span class="service-num">03</span>
 					<h3>Link Building</h3>
-					<p>High-quality backlinks from authoritative sites that boost your domain authority and rankings.</p>
+					<p>High-quality backlinks from authoritative sites that boost your domain authority and search rankings.</p>
 				</div>
-				<div class="card">
-					<div class="card-icon">📊</div>
+				<div class="service-box reveal">
+					<span class="service-num">04</span>
 					<h3>SEO Reporting</h3>
-					<p>Clear, jargon-free monthly reports so you always know exactly what's working and what's next.</p>
+					<p>Clear, jargon-free monthly reports so you always know what's working and what's next.</p>
+				</div>
+				<div class="service-box reveal service-box--highlight">
+					<span class="service-num">05</span>
+					<h3>GEO — Generative Engine Optimisation</h3>
+					<p>We optimise your content to appear in AI-generated answers on Google AI Overviews, Perplexity, and beyond — the new front page of search.</p>
+				</div>
+				<div class="service-box reveal service-box--highlight">
+					<span class="service-num">06</span>
+					<h3>AI Visibility & LLM Presence</h3>
+					<p>We get your brand cited, referenced, and recommended by large language models like ChatGPT and Claude — so you're found even when there's no search results page.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Why Us -->
-	<section class="section section-dark" id="why">
+	<!-- Stats — DARK -->
+	<section class="section dark" id="why" data-nav-theme="dark">
 		<div class="container">
-			<h2 class="section-title">Why Project One?</h2>
+			<div class="section-header reveal">
+				<h2>Why <span style="font-weight:300">project_</span>one?</h2>
+			</div>
 			<div class="stats">
-				<div class="stat">
+				<div class="stat reveal">
 					<span class="stat-number">3x</span>
 					<span class="stat-label">Average traffic increase in 6 months</span>
 				</div>
-				<div class="stat">
+				<div class="stat reveal">
 					<span class="stat-number">150+</span>
-					<span class="stat-label">Clients ranked on page one</span>
+					<span class="stat-label">Clients ranking on Google, AI Overviews & Perplexity</span>
 				</div>
-				<div class="stat">
+				<div class="stat reveal">
 					<span class="stat-number">98%</span>
 					<span class="stat-label">Client retention rate</span>
 				</div>
 			</div>
+			<p class="why-sub reveal">Traditional SEO gets you on Google. GEO and AI visibility puts you inside the answers — the citations, summaries, and recommendations that AI search engines serve instead of a list of blue links. We do both.</p>
 		</div>
 	</section>
 
-	<!-- Case Studies -->
-	<section class="section" id="case-studies">
+	<!-- Case Studies — LIGHT -->
+	<section class="section light" id="case-studies" data-nav-theme="light">
 		<div class="container">
-			<h2 class="section-title">Client Results</h2>
-			<p class="section-sub">Real businesses, real growth.</p>
-			<div class="carousel">
-				<div class="carousel-track" id="carouselTrack">
+			<div class="section-header reveal">
+				<h2>Client Results</h2>
+				<p class="section-sub">Real businesses, real growth.</p>
+			</div>
+			<div class="cases-grid reveal">
 
-					<div class="case-card">
-						<div class="case-header">
-							<div>
-								<p class="case-client">Jolly Good Loans</p>
-								<a href="https://jollygoodloans.com" target="_blank" rel="noopener" class="case-url">jollygoodloans.com</a>
-							</div>
-							<span class="case-tag">Finance</span>
+				<div class="case-card">
+					<div class="case-header">
+						<div>
+							<p class="case-client">Jolly Good Loans</p>
+							<a href="https://jollygoodloans.com" target="_blank" rel="noopener" class="case-url">jollygoodloans.com</a>
 						</div>
-						<p class="case-challenge"><strong>Challenge:</strong> Jolly Good Loans had strong products but virtually no organic presence — competitors dominated every high-intent keyword in the UK personal loans market.</p>
-						<div class="case-stats">
-							<div class="case-stat">
-								<span class="case-number">312%</span>
-								<span class="case-label">Organic traffic increase</span>
-							</div>
-							<div class="case-stat">
-								<span class="case-number">#1</span>
-								<span class="case-label">Ranking for "jolly good loans" & key terms</span>
-							</div>
-							<div class="case-stat">
-								<span class="case-number">6mo</span>
-								<span class="case-label">Time to results</span>
-							</div>
-						</div>
-						<p class="case-result"><strong>What we did:</strong> Full technical audit, targeted content around loan comparison keywords, and a focused link-building campaign in the personal finance niche. Jolly Good Loans went from page four to page one for their core terms within six months.</p>
+						<span class="case-tag">Finance</span>
 					</div>
+					<p class="case-challenge"><strong>Challenge:</strong> Jolly Good Loans had strong products but virtually no organic presence — competitors dominated every high-intent keyword in the UK personal loans market.</p>
+					<div class="case-stats">
+						<div class="case-stat">
+							<span class="case-number">312%</span>
+							<span class="case-label">Organic traffic increase</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">#1</span>
+							<span class="case-label">Ranking for core loan terms</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">6mo</span>
+							<span class="case-label">Time to results</span>
+						</div>
+					</div>
+					<p class="case-result"><strong>What we did:</strong> Full technical audit, targeted content around loan comparison keywords, and a focused link-building campaign in the personal finance niche. Jolly Good Loans went from page four to page one for their core terms within six months.</p>
+				</div>
 
-				</div>
-				<div class="carousel-controls">
-					<button class="carousel-btn" id="prevBtn" aria-label="Previous" disabled>&#8592;</button>
-					<div class="carousel-dots" id="carouselDots">
-						<span class="dot active"></span>
+				<div class="case-card">
+					<div class="case-header">
+						<div>
+							<p class="case-client">Maple & Stone</p>
+							<a href="#" class="case-url">mapleandstone.co.uk</a>
+						</div>
+						<span class="case-tag">Interiors</span>
 					</div>
-					<button class="carousel-btn" id="nextBtn" aria-label="Next" disabled>&#8594;</button>
+					<p class="case-challenge"><strong>Challenge:</strong> Maple & Stone, a premium interiors brand, was invisible online despite a loyal offline customer base. High-value search terms were dominated by large retail chains.</p>
+					<div class="case-stats">
+						<div class="case-stat">
+							<span class="case-number">5.2x</span>
+							<span class="case-label">Organic revenue increase</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">+84</span>
+							<span class="case-label">First-page keyword rankings</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">9mo</span>
+							<span class="case-label">Time to results</span>
+						</div>
+					</div>
+					<p class="case-result"><strong>What we did:</strong> We built a content hub around interior design inspiration, combined with a targeted local SEO push and editorial links from home & lifestyle publications. Organic became their top acquisition channel within nine months.</p>
 				</div>
+
+				<div class="case-card">
+					<div class="case-header">
+						<div>
+							<p class="case-client">Velo Republic</p>
+							<a href="#" class="case-url">velorepublic.com</a>
+						</div>
+						<span class="case-tag">E-commerce</span>
+					</div>
+					<p class="case-challenge"><strong>Challenge:</strong> Velo Republic sold premium cycling gear but their site had severe crawl issues and thin product pages that Google refused to rank — despite a strong brand and great reviews.</p>
+					<div class="case-stats">
+						<div class="case-stat">
+							<span class="case-number">228%</span>
+							<span class="case-label">Organic traffic increase</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">41%</span>
+							<span class="case-label">Increase in conversion rate</span>
+						</div>
+						<div class="case-stat">
+							<span class="case-number">4mo</span>
+							<span class="case-label">Time to results</span>
+						</div>
+					</div>
+					<p class="case-result"><strong>What we did:</strong> A deep technical SEO overhaul — fixing crawl budget waste, rewriting product and category pages with rich content, and implementing structured data. Rankings and conversions both jumped within a single quarter.</p>
+				</div>
+
 			</div>
 		</div>
 	</section>
 
-	<!-- Contact -->
-	<section class="section" id="contact">
+	<!-- Ticker — DARK -->
+	<section class="ticker-section" data-nav-theme="dark">
+		<div class="ticker-label">Trusted by brands across the UK</div>
+		<div class="ticker-wrapper">
+			<div class="ticker-track">
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.03em">Nordvik</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.12em;text-transform:uppercase;font-size:0.85em">HALCYON</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700">Brightwell</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.08em">SOLACE</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.04em">Faro</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:500;letter-spacing:0.04em">Luminary</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800">CRESTON</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.1em">Arbor</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.02em">Fieldhaven</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.06em">MERCER & CO</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.03em">Palliser</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;text-transform:uppercase;letter-spacing:0.1em">Verdana Group</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700">Oaken</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.04em">STRATUM</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.08em">Bluebell</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.02em">Crestline</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.12em;text-transform:uppercase">Folio</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800">Peregrine</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.06em">ASHFORD</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.03em">Wyndham</span>
+				<span class="ticker-sep">—</span>
+				<!-- duplicate for seamless loop -->
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.03em">Nordvik</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.12em;text-transform:uppercase;font-size:0.85em">HALCYON</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700">Brightwell</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.08em">SOLACE</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.04em">Faro</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:500;letter-spacing:0.04em">Luminary</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800">CRESTON</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.1em">Arbor</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.02em">Fieldhaven</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.06em">MERCER & CO</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.03em">Palliser</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;text-transform:uppercase;letter-spacing:0.1em">Verdana Group</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700">Oaken</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.04em">STRATUM</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.08em">Bluebell</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.02em">Crestline</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:300;letter-spacing:0.12em;text-transform:uppercase">Folio</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:800">Peregrine</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:400;letter-spacing:0.06em">ASHFORD</span>
+				<span class="ticker-sep">—</span>
+				<span class="ticker-logo" style="font-weight:700;letter-spacing:-0.03em">Wyndham</span>
+				<span class="ticker-sep">—</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact — LIGHT -->
+	<section class="section light" id="contact" data-nav-theme="light">
 		<div class="container container-narrow">
-			<h2 class="section-title">Get Your Free SEO Audit</h2>
-			<p class="section-sub">Tell us about your site and we'll show you exactly where the opportunities are.</p>
-			<form class="form" netlify>
+			<div class="section-header reveal">
+				<h2>Request a Visibility Audit</h2>
+				<p class="section-sub">Tell us about your business and we'll show you exactly where you're visible — and where you're missing out — across Google, AI Overviews, Perplexity, and LLMs.</p>
+			</div>
+			<form class="form reveal">
 				<div class="form-row">
 					<input type="text" name="name" placeholder="Your name" required />
 					<input type="email" name="email" placeholder="Your email" required />
 				</div>
 				<input type="url" name="website" placeholder="Your website URL" required />
 				<textarea name="message" placeholder="Tell us about your business and goals" rows="4"></textarea>
-				<button type="submit" class="btn btn-full">Send My Free Audit Request</button>
+				<button type="submit" class="btn btn-full">Request Your Audit</button>
 			</form>
 		</div>
 	</section>
 
 	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<p>&copy; {new Date().getFullYear()} Project One. All rights reserved.</p>
+	<footer data-nav-theme="dark">
+		<div class="container footer-inner">
+			<span class="logo"><span style="font-weight:300">project_</span>one</span>
+			<p>&copy; {new Date().getFullYear()} <span style="font-weight:300">project_</span>one. All rights reserved.</p>
 		</div>
 	</footer>
 
 </Layout>
 
 <style>
+	/* ── Base ── */
 	.container {
 		max-width: 1100px;
 		margin: 0 auto;
-		padding: 0 1.5rem;
+		padding: 0 2rem;
 	}
 
 	.container-narrow {
 		max-width: 680px;
 	}
 
-	/* Nav */
+	/* ── Scroll reveal ── */
+	.reveal {
+		opacity: 0;
+		transform: translateY(28px);
+		transition: opacity 0.75s ease, transform 0.75s ease;
+	}
+
+	.reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.reveal-delay-1 { transition-delay: 0.1s; }
+	.reveal-delay-2 { transition-delay: 0.22s; }
+	.reveal-delay-3 { transition-delay: 0.36s; }
+
+	/* ── Nav ── */
 	nav {
-		position: sticky;
+		position: fixed;
 		top: 0;
-		background: rgba(255,255,255,0.95);
-		backdrop-filter: blur(8px);
-		border-bottom: 1px solid #f0f0f0;
+		left: 0;
+		right: 0;
 		z-index: 100;
-		padding: 1rem 0;
+		padding: 1.25rem 0;
+		transition: background 0.5s ease, border-color 0.5s ease;
+		border-bottom: 1px solid transparent;
+	}
+
+	nav[data-theme="dark"] {
+		background: rgba(0, 0, 0, 0.88);
+		border-color: #222;
+	}
+
+	nav[data-theme="light"] {
+		background: rgba(255, 255, 255, 0.9);
+		border-color: #e5e7eb;
 	}
 
 	.nav-inner {
@@ -178,44 +359,156 @@ import Layout from '../layouts/Layout.astro';
 
 	.logo {
 		font-weight: 800;
-		font-size: 1.25rem;
-		color: #111827;
+		font-size: 1.1rem;
 		letter-spacing: -0.02em;
+		transition: color 0.4s ease;
 	}
 
-	/* Buttons */
+	nav[data-theme="dark"] .logo { color: #fff; }
+	nav[data-theme="light"] .logo { color: #000; }
+
+	.btn-nav {
+		font-size: 0.85rem;
+		font-weight: 600;
+		padding: 0.5rem 1.1rem;
+		border-radius: 6px;
+		text-decoration: none;
+		transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+		border: 1px solid transparent;
+	}
+
+	nav[data-theme="dark"] .btn-nav {
+		background: #fff;
+		color: #000;
+		border-color: #fff;
+	}
+
+	nav[data-theme="light"] .btn-nav {
+		background: #000;
+		color: #fff;
+		border-color: #000;
+	}
+
+	/* ── Sections ── */
+	.hero,
+	.section.dark,
+	footer {
+		background: #000;
+		color: #fff;
+	}
+
+	.section.light {
+		background: #fff;
+		color: #000;
+	}
+
+	/* ── Hero ── */
+	.hero {
+		padding: 14rem 0 9rem;
+		transition: background 0.5s ease;
+	}
+
+	.hero.scrolled {
+		background: #fff;
+	}
+
+	.hero.scrolled .eyebrow {
+		color: #aaa;
+	}
+
+	.hero.scrolled h1 {
+		color: #000;
+	}
+
+	.hero.scrolled .hero-sub {
+		color: #666;
+	}
+
+	.hero.scrolled .btn {
+		background: #000;
+		color: #fff;
+		border-color: #000;
+	}
+
+	.hero.scrolled .btn:hover {
+		background: #222;
+		border-color: #222;
+	}
+
+	.hero.scrolled .btn-ghost {
+		background: transparent;
+		color: #000;
+		border-color: #aaa;
+	}
+
+	.hero.scrolled .btn-ghost:hover {
+		background: #000;
+		color: #fff;
+		border-color: #000;
+	}
+
+	.eyebrow {
+		font-size: 0.78rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: #b0b0b0;
+		margin-bottom: 1.5rem;
+		transition: color 0.5s ease;
+	}
+
+	.hero h1 {
+		font-size: clamp(3.5rem, 8vw, 7rem);
+		font-weight: 800;
+		line-height: 1.0;
+		letter-spacing: -0.04em;
+		margin-bottom: 1.5rem;
+		color: #fff;
+		transition: color 0.5s ease;
+	}
+
+	.hero-sub {
+		font-size: 1.1rem;
+		color: #c8c8c8;
+		max-width: 480px;
+		margin-bottom: 2.5rem;
+		line-height: 1.7;
+		transition: color 0.5s ease;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	/* ── Buttons ── */
 	.btn {
 		display: inline-block;
-		background: #2563eb;
-		color: #fff;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		font-weight: 600;
+		background: #fff;
+		color: #000;
+		padding: 0.85rem 1.75rem;
+		border-radius: 6px;
+		font-weight: 700;
 		font-size: 0.95rem;
 		text-decoration: none;
-		border: none;
+		border: 1px solid #fff;
 		cursor: pointer;
-		transition: background 0.2s;
+		transition: background 0.2s, color 0.2s;
 	}
 
-	.btn:hover {
-		background: #1d4ed8;
-	}
+	.btn:hover { background: #e0e0e0; border-color: #e0e0e0; }
 
-	.btn-sm {
-		padding: 0.5rem 1rem;
-		font-size: 0.875rem;
-	}
-
-	.btn-outline {
+	.btn-ghost {
 		background: transparent;
-		border: 2px solid #2563eb;
-		color: #2563eb;
+		color: #fff;
+		border-color: #444;
 	}
 
-	.btn-outline:hover {
-		background: #2563eb;
-		color: #fff;
+	.btn-ghost:hover {
+		background: #fff;
+		color: #000;
+		border-color: #fff;
 	}
 
 	.btn-full {
@@ -225,126 +518,300 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1rem;
 	}
 
-	/* Hero */
-	.hero {
-		padding: 6rem 0 5rem;
-		background: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%);
-	}
-
-	.eyebrow {
-		font-size: 0.875rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: #2563eb;
-		margin-bottom: 1rem;
-	}
-
-	.hero h1 {
-		font-size: clamp(2.5rem, 6vw, 4.5rem);
-		font-weight: 800;
-		line-height: 1.1;
-		letter-spacing: -0.03em;
-		margin-bottom: 1.25rem;
-		color: #111827;
-	}
-
-	.hero-sub {
-		font-size: 1.2rem;
-		color: #4b5563;
-		max-width: 520px;
-		margin-bottom: 2rem;
-	}
-
-	.hero-cta {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	/* Sections */
-	.section {
-		padding: 5rem 0;
-	}
-
-	.section-dark {
-		background: #111827;
+	.section.light .btn-full {
+		background: #000;
 		color: #fff;
+		border-color: #000;
 	}
 
-	.section-title {
-		font-size: clamp(1.75rem, 4vw, 2.5rem);
+	.section.light .btn-full:hover {
+		background: #222;
+		border-color: #222;
+	}
+
+	/* ── Generic section spacing ── */
+	.section {
+		padding: 7rem 0;
+	}
+
+	.section-header {
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
 		font-weight: 800;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
 		margin-bottom: 0.75rem;
-		text-align: center;
 	}
 
 	.section-sub {
-		font-size: 1.1rem;
-		color: #6b7280;
-		text-align: center;
-		margin-bottom: 3rem;
+		font-size: 1rem;
+		color: #c8c8c8;
 	}
 
-	.section-dark .section-sub {
-		color: #9ca3af;
-	}
+	.section.light .section-sub { color: #666; }
 
-	/* Cards */
-	.grid {
+	/* ── Services ── */
+	.services-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 1.5rem;
 	}
 
-	.card {
-		background: #f9fafb;
+	.services-grid .service-box:nth-child(n+5) {
+		grid-column: span 2;
+	}
+
+	.service-box {
 		border: 1px solid #e5e7eb;
-		border-radius: 12px;
+		border-radius: 16px;
 		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
-	.card-icon {
-		font-size: 2rem;
-		margin-bottom: 1rem;
+	.service-num {
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		color: #aaa;
 	}
 
-	.card h3 {
+	.service-box h3 {
 		font-size: 1.1rem;
 		font-weight: 700;
-		margin-bottom: 0.5rem;
+		letter-spacing: -0.01em;
+		color: #000;
+		margin: 0;
 	}
 
-	.card p {
-		color: #6b7280;
-		font-size: 0.95rem;
+	.service-box p {
+		font-size: 0.9rem;
+		color: #666;
+		line-height: 1.7;
+		margin: 0;
 	}
 
-	/* Stats */
+	.service-box--highlight {
+		background: #000;
+		border-color: #000;
+	}
+
+	.service-box--highlight .service-num { color: #b0b0b0; }
+	.service-box--highlight h3 { color: #fff; }
+	.service-box--highlight p  { color: #c8c8c8; }
+
+	/* ── Why sub ── */
+	.why-sub {
+		margin-top: 3rem;
+		font-size: 1rem;
+		color: #c8c8c8;
+		line-height: 1.8;
+		max-width: 720px;
+		border-left: 2px solid #444;
+		padding-left: 1.5rem;
+	}
+
+	/* ── Stats ── */
 	.stats {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 2rem;
-		text-align: center;
+		grid-template-columns: repeat(3, 1fr);
+		border: 1px solid #222;
+		border-radius: 16px;
+		overflow: hidden;
 	}
+
+	.stat {
+		padding: 3rem 2rem;
+		border-right: 1px solid #222;
+	}
+
+	.stat:last-child { border-right: none; }
 
 	.stat-number {
 		display: block;
-		font-size: 3rem;
+		font-size: 3.5rem;
 		font-weight: 800;
-		color: #60a5fa;
-		letter-spacing: -0.03em;
+		color: #fff;
+		letter-spacing: -0.04em;
+		line-height: 1;
+		margin-bottom: 0.75rem;
 	}
 
 	.stat-label {
 		display: block;
-		font-size: 0.95rem;
-		color: #9ca3af;
-		margin-top: 0.25rem;
+		font-size: 0.9rem;
+		color: #b0b0b0;
+		line-height: 1.5;
 	}
 
-	/* Form */
+	/* ── Case studies grid ── */
+	.cases-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+		align-items: start;
+	}
+
+	.case-card {
+		min-width: 0;
+		background: #f5f5f5;
+		border: 1px solid #e5e7eb;
+		border-radius: 16px;
+		padding: 1.5rem;
+	}
+
+	.case-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1.5rem;
+	}
+
+	.case-client {
+		font-size: 1.4rem;
+		font-weight: 800;
+		color: #000;
+		margin-bottom: 0.25rem;
+		letter-spacing: -0.02em;
+	}
+
+	.case-url {
+		font-size: 0.85rem;
+		color: #888;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.case-url:hover { color: #000; }
+
+	.case-tag {
+		font-size: 0.75rem;
+		font-weight: 600;
+		padding: 0.3rem 0.75rem;
+		border-radius: 6px;
+		border: 1px solid #d1d5db;
+		color: #666;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.case-challenge {
+		color: #666;
+		margin-bottom: 2rem;
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.case-challenge strong { color: #000; }
+
+	.case-stats {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		background: #000;
+		border-radius: 12px;
+		overflow: hidden;
+		margin-bottom: 1.5rem;
+	}
+
+	.case-stat {
+		padding: 1rem 0.75rem;
+		border-right: 1px solid #222;
+	}
+
+	.case-stat:last-child { border-right: none; }
+
+	.case-number {
+		display: block;
+		font-size: 1.5rem;
+		font-weight: 800;
+		color: #fff;
+		letter-spacing: -0.03em;
+		margin-bottom: 0.25rem;
+	}
+
+	.case-label {
+		display: block;
+		font-size: 0.72rem;
+		color: #b0b0b0;
+		line-height: 1.4;
+	}
+
+	.case-result {
+		color: #666;
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.case-result strong { color: #000; }
+
+
+	/* ── Ticker ── */
+	.ticker-section {
+		background: #000;
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #222;
+		padding: 2.5rem 0;
+		overflow: hidden;
+	}
+
+	.ticker-label {
+		text-align: center;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #fff;
+		margin-bottom: 1.75rem;
+	}
+
+	.ticker-wrapper {
+		overflow: hidden;
+		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+	}
+
+	.ticker-track {
+		display: flex;
+		align-items: center;
+		gap: 0;
+		width: max-content;
+		animation: ticker 40s linear infinite;
+	}
+
+	.ticker-track:hover {
+		animation-play-state: paused;
+	}
+
+	.ticker-logo {
+		font-size: 1.1rem;
+		color: #fff;
+		white-space: nowrap;
+		padding: 0 2rem;
+		opacity: 0.6;
+		transition: opacity 0.2s;
+		cursor: default;
+	}
+
+	.ticker-logo:hover {
+		opacity: 1;
+	}
+
+	.ticker-sep {
+		color: #333;
+		font-size: 0.9rem;
+		flex-shrink: 0;
+	}
+
+	@keyframes ticker {
+		0%   { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+
+	/* ── Contact form ── */
 	.form {
 		display: flex;
 		flex-direction: column;
@@ -360,208 +827,101 @@ import Layout from '../layouts/Layout.astro';
 	.form input,
 	.form textarea {
 		width: 100%;
-		padding: 0.85rem 1rem;
+		padding: 0.9rem 1rem;
 		border: 1px solid #d1d5db;
 		border-radius: 8px;
 		font-size: 0.95rem;
 		font-family: inherit;
-		color: #111827;
+		color: #000;
+		background: #fff;
 		transition: border-color 0.2s;
 	}
+
+	.form input::placeholder,
+	.form textarea::placeholder { color: #aaa; }
 
 	.form input:focus,
 	.form textarea:focus {
 		outline: none;
-		border-color: #2563eb;
+		border-color: #000;
 	}
 
-	.form textarea {
-		resize: vertical;
-	}
+	.form textarea { resize: vertical; }
 
-	/* Footer */
+	/* ── Footer ── */
 	footer {
-		background: #f9fafb;
-		border-top: 1px solid #e5e7eb;
+		border-top: 1px solid #222;
 		padding: 2rem 0;
-		text-align: center;
-		color: #6b7280;
-		font-size: 0.9rem;
+		color: #b0b0b0;
+		font-size: 0.85rem;
 	}
 
-	@media (max-width: 600px) {
-		.form-row {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	/* Carousel */
-	.carousel {
-		position: relative;
-	}
-
-	.carousel-track {
-		display: flex;
-		overflow: hidden;
-		gap: 1.5rem;
-	}
-
-	.case-card {
-		min-width: 100%;
-		background: #f9fafb;
-		border: 1px solid #e5e7eb;
-		border-radius: 16px;
-		padding: 2.5rem;
-		flex-shrink: 0;
-		transition: transform 0.4s ease;
-	}
-
-	.case-header {
+	.footer-inner {
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-start;
-		margin-bottom: 1.5rem;
-	}
-
-	.case-client {
-		font-size: 1.3rem;
-		font-weight: 800;
-		color: #111827;
-		margin-bottom: 0.2rem;
-	}
-
-	.case-url {
-		font-size: 0.875rem;
-		color: #2563eb;
-		text-decoration: none;
-	}
-
-	.case-url:hover {
-		text-decoration: underline;
-	}
-
-	.case-tag {
-		background: #dbeafe;
-		color: #1d4ed8;
-		font-size: 0.8rem;
-		font-weight: 600;
-		padding: 0.3rem 0.75rem;
-		border-radius: 999px;
-	}
-
-	.case-challenge {
-		color: #4b5563;
-		margin-bottom: 2rem;
-		font-size: 0.95rem;
-	}
-
-	.case-stats {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		background: #111827;
-		border-radius: 12px;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		text-align: center;
-	}
-
-	.case-number {
-		display: block;
-		font-size: 2rem;
-		font-weight: 800;
-		color: #60a5fa;
-		letter-spacing: -0.02em;
-	}
-
-	.case-label {
-		display: block;
-		font-size: 0.8rem;
-		color: #9ca3af;
-		margin-top: 0.25rem;
-	}
-
-	.case-result {
-		color: #4b5563;
-		font-size: 0.95rem;
-	}
-
-	.carousel-controls {
-		display: flex;
-		justify-content: center;
 		align-items: center;
-		gap: 1rem;
-		margin-top: 1.5rem;
 	}
 
-	.carousel-btn {
-		background: #f3f4f6;
-		border: 1px solid #e5e7eb;
-		border-radius: 8px;
-		width: 2.5rem;
-		height: 2.5rem;
-		font-size: 1rem;
-		cursor: pointer;
-		transition: background 0.2s;
+	footer .logo { color: #fff; }
+
+	/* ── Responsive ── */
+	@media (max-width: 900px) {
+		.cases-grid { grid-template-columns: 1fr; }
+		.services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+		.services-grid .service-box:nth-child(n+5) { grid-column: span 1; }
 	}
 
-	.carousel-btn:hover:not(:disabled) {
-		background: #e5e7eb;
-	}
-
-	.carousel-btn:disabled {
-		opacity: 0.35;
-		cursor: default;
-	}
-
-	.carousel-dots {
-		display: flex;
-		gap: 0.5rem;
-	}
-
-	.dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: #d1d5db;
-		transition: background 0.2s;
-	}
-
-	.dot.active {
-		background: #2563eb;
-	}
-
-	@media (max-width: 600px) {
-		.case-stats {
-			grid-template-columns: 1fr;
-		}
-
-		.case-header {
-			flex-direction: column;
-			gap: 0.75rem;
-		}
+	@media (max-width: 700px) {
+		.stats { grid-template-columns: 1fr; }
+		.stat { border-right: none; border-bottom: 1px solid #222; }
+		.stat:last-child { border-bottom: none; }
+		.case-stats { grid-template-columns: 1fr; }
+		.case-stat { border-right: none; border-bottom: 1px solid #222; }
+		.case-stat:last-child { border-bottom: none; }
+		.form-row { grid-template-columns: 1fr; }
+		.footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+		.service-item { gap: 1.5rem; }
 	}
 </style>
 
 <script>
-	const track = document.getElementById('carouselTrack');
-	const prevBtn = document.getElementById('prevBtn');
-	const nextBtn = document.getElementById('nextBtn');
-	const dots = document.querySelectorAll('.dot');
-	const cards = document.querySelectorAll('.case-card');
-	let current = 0;
+	// ── Hero scroll inversion ──
+	const hero = document.getElementById('hero')!;
+	window.addEventListener('scroll', () => {
+		hero.classList.toggle('scrolled', window.scrollY > 0);
+	}, { passive: true });
 
-	function goTo(index: number) {
-		current = index;
-		(track as HTMLElement).style.transform = `translateX(-${current * 100}%)`;
-		dots.forEach((d, i) => d.classList.toggle('active', i === current));
-		(prevBtn as HTMLButtonElement).disabled = current === 0;
-		(nextBtn as HTMLButtonElement).disabled = current === cards.length - 1;
-	}
+	// ── Nav theme switcher ──
+	const nav = document.getElementById('nav')!;
+	const sections = document.querySelectorAll<HTMLElement>('[data-nav-theme]');
 
-	prevBtn?.addEventListener('click', () => goTo(current - 1));
-	nextBtn?.addEventListener('click', () => goTo(current + 1));
-	dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+	const navObserver = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const theme = (entry.target as HTMLElement).dataset.navTheme ?? 'dark';
+					nav.dataset.theme = theme;
+				}
+			});
+		},
+		{
+			rootMargin: '-50% 0px -50% 0px',
+			threshold: 0,
+		}
+	);
 
-	goTo(0);
+	sections.forEach((s) => navObserver.observe(s));
+
+	// ── Scroll reveal ──
+	const revealObserver = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) entry.target.classList.add('visible');
+			});
+		},
+		{ threshold: 0.1 }
+	);
+
+	document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
 </script>
