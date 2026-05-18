@@ -1,3 +1,112 @@
+---
+const SITE_URL = 'https://projectone.co.uk';
+
+const canonical = Astro.url.origin + Astro.url.pathname;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": "Project One",
+      "url": SITE_URL,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/favicon.svg`
+      },
+      "description": "Project One is a UK SEO and GEO agency helping brands rank across Google, AI Overviews, Perplexity, and large language models.",
+      "email": "hello@projectone.co.uk",
+      "telephone": "+441234567890",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24 Example Street",
+        "addressLocality": "London",
+        "postalCode": "EC1A 1BB",
+        "addressCountry": "GB"
+      },
+      "areaServed": "GB"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#business`,
+      "name": "Project One",
+      "url": SITE_URL,
+      "email": "hello@projectone.co.uk",
+      "telephone": "+441234567890",
+      "priceRange": "££",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24 Example Street",
+        "addressLocality": "London",
+        "postalCode": "EC1A 1BB",
+        "addressCountry": "GB"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SEO & GEO Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Audit",
+              "description": "A deep dive into your site's technical, on-page, and off-site health — with a clear action plan focused on the fixes that drive results fastest."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Technical SEO",
+              "description": "Auditing and fixing the under-the-hood issues stopping Google from crawling and ranking your site."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Content Strategy",
+              "description": "Keyword research, content planning, and writing that targets the right searches at every stage of the funnel."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Reporting",
+              "description": "Clear, jargon-free monthly reports so you always know what's working and what's next."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "GEO — Generative Engine Optimisation",
+              "description": "Optimising content to appear in AI-generated answers on Google AI Overviews, Perplexity, and beyond."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Visibility & LLM Presence",
+              "description": "Getting your brand cited, referenced, and recommended by large language models like ChatGPT and Claude."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "url": SITE_URL,
+      "name": "Project One",
+      "publisher": { "@id": `${SITE_URL}/#organization` }
+    }
+  ]
+};
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,9 +116,12 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Project One — SEO that drives real results. We help businesses rank higher, get found, and grow." />
 		<title>Project One | SEO Agency</title>
+		<link rel="canonical" href={canonical} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		<slot name="head" />
 	</head>
 	<body>
 		<slot />

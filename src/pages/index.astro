@@ -1,13 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Logo from '../components/Logo.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Generative Engine Optimisation (GEO)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is GEO different from SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AI visibility and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need GEO if my SEO is already performing well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO results typically begin showing within 3–6 months, with significant growth compounding over time. GEO and AI visibility can move faster in some areas — particularly Google AI Overviews — though the landscape is evolving quickly. We set realistic timelines based on your current position and provide monthly reporting so you always know where things stand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure AI visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We track AI mentions and citations across key platforms, monitor your presence in Google AI Overviews, and benchmark how often your brand appears in LLM responses to relevant queries. The measurement toolkit for AI visibility is maturing rapidly and we stay at the forefront of what's possible — reporting on metrics that actually reflect commercial impact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a visibility audit cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our visibility audit assesses your current performance across traditional search, AI Overviews, and LLM platforms. We examine technical SEO health, content quality and structure, entity clarity, backlink profile, and AI citation signals. You receive a prioritised action plan that identifies exactly where the biggest gains are and in what order to pursue them."
+      }
+    }
+  ]
+};
 ---
 
 <Layout>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
 
 	<!-- Nav -->
 	<nav id="nav" data-theme="dark">
 		<div class="container nav-inner">
-			<span class="logo"><span style="font-weight:300">project_</span>one</span>
+			<a href="/" class="logo"><Logo /></a>
 			<a href="#contact" class="btn-nav">Request an Audit</a>
 		</div>
 	</nav>
@@ -89,6 +154,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<p class="why-sub reveal">Traditional SEO gets you on Google. GEO and AI visibility puts you inside the answers — the citations, summaries, and recommendations that AI search engines serve instead of a list of blue links. We do both.</p>
 		</div>
+		<p class="ticker-label">Trusted by brands across the UK</p>
 		<div class="ticker-wrapper">
 			<div class="ticker-track">
 				<span class="ticker-logo" style="font-weight:800;letter-spacing:-0.03em">Nordvik</span>
@@ -174,7 +240,6 @@ import Layout from '../layouts/Layout.astro';
 				<span class="ticker-sep">—</span>
 			</div>
 		</div>
-		<p class="ticker-label">Trusted by brands across the UK</p>
 	</section>
 
 	<!-- Case Studies — LIGHT -->
@@ -377,7 +442,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class="container">
 			<div class="footer-top">
 				<div class="footer-brand">
-					<span class="logo"><span style="font-weight:300">project_</span>one</span>
+					<a href="/" class="logo"><Logo /></a>
 					<p class="footer-tagline">SEO · GEO · AI Visibility</p>
 				</div>
 				<div class="footer-col">
@@ -462,9 +527,9 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.logo {
-		font-weight: 800;
-		font-size: 1.1rem;
-		letter-spacing: -0.02em;
+		display: flex;
+		align-items: center;
+		text-decoration: none;
 		transition: color 0.4s ease;
 	}
 
@@ -861,11 +926,12 @@ import Layout from '../layouts/Layout.astro';
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: #555;
-		margin-top: 1.5rem;
+		margin-top: 4rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.ticker-wrapper {
-		margin-top: 4rem;
+		margin-top: 0;
 		border-top: 1px solid #222;
 		overflow: hidden;
 		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
