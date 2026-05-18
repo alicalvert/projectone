@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/inter';
 const SITE_URL = 'https://projectone.co.uk';
 
 const canonical = Astro.url.origin + Astro.url.pathname;
@@ -117,10 +118,6 @@ const schema = {
 		<meta name="description" content="Project One — SEO that drives real results. We help businesses rank higher, get found, and grow." />
 		<title>Project One | SEO Agency</title>
 		<link rel="canonical" href={canonical} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-		<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 		<slot name="head" />
 	</head>
@@ -141,7 +138,7 @@ const schema = {
 	}
 
 	body {
-		font-family: 'Inter', sans-serif;
+		font-family: 'Inter Variable', 'Inter', sans-serif;
 		color: #fff;
 		background: #000;
 		line-height: 1.6;
