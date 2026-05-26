@@ -9,5 +9,19 @@
 	},
 	"observability": {
 		"enabled": true
+	},
+	"env": {
+		// Staging: refine here — live at projectone.alistair-calvert.workers.dev
+		"staging": {
+			"name": "projectone"
+		},
+		// Production: serves projectone.me and www.projectone.me
+		"production": {
+			"name": "projectone-production",
+			"routes": [
+				{ "pattern": "projectone.me/*", "custom_domain": true },
+				{ "pattern": "www.projectone.me/*", "custom_domain": true }
+			]
+		}
 	}
 }
