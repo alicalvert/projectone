@@ -1,60 +1,58 @@
 import type { APIRoute } from 'astro';
-import { Resend } from 'resend';
 
 export const POST: APIRoute = async ({ request, locals }) => {
   const env = (locals as any).runtime?.env ?? {};
   const apiKey = env.RESEND_API_KEY;
 
   if (!apiKey) {
-    return new Response(JSON.stringify({ error: 'Server configuration error' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return json({ error: 'Server configuration error' }, 500);
   }
 
   let body: Record<string, string>;
   try {
     body = await request.json();
   } catch {
-    return new Response(JSON.stringify({ error: 'Invalid request' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return json({ error: 'Invalid request' }, 400);
   }
 
   const { name, email, website, message } = body;
   if (!name || !email || !website) {
-    return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return json({ error: 'Missing required fields' }, 400);
   }
 
-  const resend = new Resend(apiKey);
-
-  const { error } = await resend.emails.send({
-    from: 'Project One <hello@projectone.me>',
-    to: 'formrequest@projectone.me',
-    replyTo: email,
-    subject: `Visibility audit request from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\n${message ?? ''}`.trim(),
-    html: `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Website:</strong> ${website}</p>
-      ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, '<br>')}</p>` : ''}
-    `,
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'Project One <hello@projectone.me>',
+      to: ['formrequest@projectone.me'],
+      reply_to: email,
+      subject: `Visibility audit request from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\n${message ?? ''}`.trim(),
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Website:</strong> ${website}</p>
+        ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, '<br>')}</p>` : ''}
+      `,
+    }),
   });
 
-  if (error) {
-    return new Response(JSON.stringify({ error: 'Failed to send email' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+  if (!res.ok) {
+    const detail = await res.text();
+    console.error('Resend error:', res.status, detail);
+    return json({ error: 'Failed to send email' }, 500);
   }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
+  return json({ success: true }, 200);
+};
+
+function json(data: object, status: number) {
+  return new Response(JSON.stringify(data), {
+    status,
     headers: { 'Content-Type': 'application/json' },
   });
-};
+}
