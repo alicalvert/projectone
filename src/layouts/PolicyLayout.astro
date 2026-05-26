@@ -1,0 +1,264 @@
+---
+import Layout from './Layout.astro';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<Layout>
+  <nav id="nav" data-theme="dark">
+    <div class="container nav-inner">
+      <a href="/" class="logo"><Logo /></a>
+    </div>
+  </nav>
+
+  <main class="policy-main">
+    <div class="container container-narrow">
+      <h1>{title}</h1>
+      <slot />
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo"><Logo /></a>
+          <p class="footer-tagline">SEO · GEO · AI VISIBILITY</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@projectone.me">hello@projectone.me</a></li>
+            <li><a href="tel:+441234567890">+44 (0)1234 567 890</a></li>
+            <li>24 Example Street<br />London, EC1A 1BB<br />United Kingdom</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} <span style="font-weight:300">project_</span>one. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ── Base ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .container-narrow {
+    max-width: 720px;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    background: rgba(0, 0, 0, 0.88);
+    border-bottom: 1px solid #222;
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .btn-nav {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .btn-nav:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ── Policy content ── */
+  .policy-main {
+    background: #000;
+    color: #fff;
+    padding: 10rem 0 7rem;
+    min-height: 100vh;
+  }
+
+  .policy-main h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-main :global(.policy-meta) {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+  }
+
+  .policy-main :global(h2) {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 2.5rem 0 0.75rem;
+    color: #fff;
+  }
+
+  .policy-main :global(h3) {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+    color: #c8c8c8;
+  }
+
+  .policy-main :global(p) {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .policy-main :global(ul) {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .policy-main :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .policy-main :global(a) {
+    color: #fff;
+    text-underline-offset: 3px;
+  }
+
+  .policy-main :global(a:hover) {
+    color: #b0b0b0;
+  }
+
+  .policy-main :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    color: #b0b0b0;
+    margin-bottom: 1.5rem;
+  }
+
+  .policy-main :global(th) {
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .policy-main :global(td) {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #1a1a1a;
+    vertical-align: top;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid #222;
+    padding: 4rem 0 2rem;
+    background: #000;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #222;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.78rem;
+    color: #b0b0b0;
+    letter-spacing: 0.08em;
+  }
+
+  footer .logo { color: #fff; }
+
+  .footer-col h4 {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+  }
+
+  .footer-col a:hover { color: #fff; }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #444;
+  }
+
+  @media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
