@@ -229,7 +229,7 @@ const faqSchema = {
 					<input type="text" name="name" placeholder="Your name" required />
 					<input type="email" name="email" placeholder="Your email" required />
 				</div>
-				<input type="url" name="website" placeholder="Your website URL" required />
+				<input type="text" name="website" placeholder="Your website URL (e.g. www.example.com)" required />
 				<textarea name="message" placeholder="Tell us about your business and goals" rows="4"></textarea>
 				<button type="submit" class="btn btn-full" id="contact-submit">Request Your Audit</button>
 				<p id="contact-status" style="display:none;margin-top:1rem;text-align:center;font-size:0.9rem;"></p>
@@ -246,10 +246,15 @@ const faqSchema = {
 					btn.textContent = 'Sending…';
 					status.style.display = 'none';
 
+					let website = (form.elements.namedItem('website') as HTMLInputElement).value.trim();
+					if (website && !/^https?:\/\//i.test(website)) {
+						website = 'https://' + website;
+					}
+
 					const data = {
 						name: (form.elements.namedItem('name') as HTMLInputElement).value,
 						email: (form.elements.namedItem('email') as HTMLInputElement).value,
-						website: (form.elements.namedItem('website') as HTMLInputElement).value,
+						website,
 						message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
 					};
 
