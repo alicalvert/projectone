@@ -16,87 +16,42 @@ const schema = {
         "@type": "ImageObject",
         "url": `${SITE_URL}/favicon.svg`
       },
-      "description": "Project One is a UK SEO and GEO agency helping brands rank across Google, AI Overviews, Perplexity, and large language models.",
+      "description": "AI visibility monitoring for UK sports and health brands. Project One tracks whether ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude recommend your brand when people ask what to buy.",
       "email": "hello@projectone.me",
-      "telephone": "+441234567890",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "24 Example Street",
-        "addressLocality": "London",
-        "postalCode": "EC1A 1BB",
-        "addressCountry": "GB"
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
       },
-      "areaServed": "GB"
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}/#business`,
-      "name": "Project One",
-      "url": SITE_URL,
-      "email": "hello@projectone.me",
-      "telephone": "+441234567890",
-      "priceRange": "££",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "24 Example Street",
-        "addressLocality": "London",
-        "postalCode": "EC1A 1BB",
-        "addressCountry": "GB"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "SEO & GEO Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO Audit",
-              "description": "A deep dive into your site's technical, on-page, and off-site health — with a clear action plan focused on the fixes that drive results fastest."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Technical SEO",
-              "description": "Auditing and fixing the under-the-hood issues stopping Google from crawling and ranking your site."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Content Strategy",
-              "description": "Keyword research, content planning, and writing that targets the right searches at every stage of the funnel."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO Reporting",
-              "description": "Clear, jargon-free monthly reports so you always know what's working and what's next."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "GEO — Generative Engine Optimisation",
-              "description": "Optimising content to appear in AI-generated answers on Google AI Overviews, Perplexity, and beyond."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Visibility & LLM Presence",
-              "description": "Getting your brand cited, referenced, and recommended by large language models like ChatGPT and Claude."
-            }
+      "knowsAbout": [
+        "AI visibility",
+        "AI visibility monitoring",
+        "Generative Engine Optimisation",
+        "Large language model search",
+        "Sports nutrition ecommerce",
+        "DTC health and wellness brands"
+      ],
+      // TODO: replace with the real LinkedIn URL
+      "sameAs": [
+        "https://www.linkedin.com/company/project-one-ai-visibility"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Visibility Gap Report",
+            "description": "A one-off audit of how a brand appears when people ask AI assistants what to buy, across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude, delivered as a written report with a prioritised action plan."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Visibility Monitoring",
+            "description": "Monthly monitoring of a brand's visibility across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude, tracking how mentions and competitor recommendations change over time."
+          }
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -115,8 +70,8 @@ const schema = {
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Project One — SEO that drives real results. We help businesses rank higher, get found, and grow." />
-		<title>Project One | SEO Agency</title>
+		<meta name="description" content="See whether ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude recommend your brand — and who they suggest instead. Monthly AI visibility monitoring for UK sports and health ecommerce brands." />
+		<title>Project One | AI Visibility Monitoring for UK Sports & Health Brands</title>
 		<link rel="canonical" href={canonical} />
 		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 		<slot name="head" />

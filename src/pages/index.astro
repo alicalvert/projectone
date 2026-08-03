@@ -51,7 +51,7 @@ const faqSchema = {
       "name": "How do you measure AI visibility?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We track AI mentions and citations across key platforms, monitor your presence in Google AI Overviews, and benchmark how often your brand appears in LLM responses to relevant queries. The measurement toolkit for AI visibility is maturing rapidly and we stay at the forefront of what's possible — reporting on metrics that actually reflect commercial impact."
+        "text": "Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like \"best electrolyte powder for runners\" or \"which recovery protein is worth it\" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot."
       }
     },
     {
@@ -60,6 +60,38 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Our visibility audit assesses your current performance across traditional search, AI Overviews, and LLM platforms. We examine technical SEO health, content quality and structure, entity clarity, backlink profile, and AI citation signals. You receive a prioritised action plan that identifies exactly where the biggest gains are and in what order to pursue them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does pricing work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you do the fixes as well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with Shopify brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most of the sports and health brands I work with are DTC ecommerce running on Shopify. The monitoring looks at how AI assistants talk about your brand and products, so it works the same whatever platform your store is built on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's in the monthly report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next."
       }
     }
   ]
@@ -80,12 +112,12 @@ const faqSchema = {
 	<!-- Hero — DARK -->
 	<section class="hero" id="hero" data-nav-theme="dark">
 <div class="container">
-			<p class="eyebrow reveal">SEO · GEO · AI Visibility</p>
-			<h1 class="reveal reveal-delay-1">Rank everywhere<br />people search<span style="color:#FF2D78">.</span></h1>
-			<p class="hero-sub reveal reveal-delay-2">Google. Perplexity. ChatGPT. We get you found wherever people search.</p>
+			<p class="eyebrow reveal">AI Visibility Monitoring · UK Sports &amp; Health Brands</p>
+			<h1 class="reveal reveal-delay-1">When someone asks ChatGPT for the best UK electrolyte powder, does your brand come up<span style="color:#FF2D78">?</span></h1>
+			<p class="hero-sub reveal reveal-delay-2">Project One gives UK sports and health brands a monthly picture of where they appear across the big AI assistants — and which competitors get recommended instead.</p>
 			<div class="hero-cta reveal reveal-delay-3">
-				<a href="#contact" class="btn">Request a Visibility Audit</a>
-				<a href="#services" class="btn btn-ghost">See What We Do</a>
+				<a href="#contact" class="btn">See where you stand</a>
+				<a href="#services" class="btn btn-ghost">See what's tracked</a>
 			</div>
 		</div>
 	</section>
@@ -94,41 +126,43 @@ const faqSchema = {
 	<section class="section light" id="services" data-nav-theme="light">
 		<div class="container">
 			<div class="section-header reveal">
-				<h2>What We Do</h2>
-				<p class="section-sub">Search has changed. We keep you ahead of it.</p>
+				<h2>What I do</h2>
+				<p class="section-sub">Two products. One question: are the AI assistants recommending your brand, or someone else's?</p>
 			</div>
 			<div class="services-grid">
 				<div class="service-box reveal">
-					<span class="service-num">01</span>
-					<h3>SEO Audit</h3>
-					<p>A deep dive into your site's technical, on-page, and off-site health — with a clear action plan focused on the fixes that drive results fastest.</p>
-				</div>
-				<div class="service-box reveal">
-					<span class="service-num">02</span>
-					<h3>Technical SEO</h3>
-					<p>We audit and fix the under-the-hood issues stopping Google from crawling and ranking your site.</p>
-				</div>
-				<div class="service-box reveal">
-					<span class="service-num">03</span>
-					<h3>Content Strategy</h3>
-					<p>Keyword research, content planning, and writing that targets the right searches at every stage of the funnel.</p>
-				</div>
-				<div class="service-box reveal">
-					<span class="service-num">04</span>
-					<h3>SEO Reporting</h3>
-					<p>Clear, jargon-free monthly reports so you always know what's working and what's next.</p>
+					<span class="service-num">01 · One-off</span>
+					<h3>Visibility Gap Report</h3>
+					<p>A one-off audit of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories — electrolyte powders, protein, recovery supplements, running kit — and record where you appear and who gets recommended instead. You get a written report with a prioritised action plan, usually within about a week.</p>
 				</div>
 				<div class="service-box reveal service-box--highlight">
-					<span class="service-num">05</span>
-					<h3>GEO — Generative Engine Optimisation</h3>
-					<p>We optimise your content to appear in AI-generated answers on Google AI Overviews, Perplexity, and beyond — the new front page of search.</p>
-				</div>
-				<div class="service-box reveal service-box--highlight">
-					<span class="service-num">06</span>
-					<h3>AI Visibility & LLM Presence</h3>
-					<p>We get your brand cited, referenced, and recommended by large language models like ChatGPT and Claude — so you're found even when there's no search results page.</p>
+					<span class="service-num">02 · Monthly</span>
+					<h3>Monthly Monitoring</h3>
+					<p>Ongoing tracking across the same five assistants. Each month you get a report showing which questions surface your brand, how that's moved since last month, which competitors are gaining ground in your categories, and where the new gaps are. It turns a one-off snapshot into a trend you can act on.</p>
 				</div>
 			</div>
+			<p class="services-pricing reveal">Fixed-price audit, monthly retainer for monitoring, no long-term contract — <a href="#contact">get in touch for a quote</a>.</p>
+			<div class="dont-do reveal">
+				<h3>What I don't do</h3>
+				<p>I don't implement the fixes. No technical changes, no content writing, no link building. I diagnose where your brand is invisible and monitor how it changes over time — the action plan is written in plain English so you can hand it straight to your own developer or agency to execute.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Report preview — DARK -->
+	<section class="section dark" id="report" data-nav-theme="dark">
+		<div class="container">
+			<div class="section-header reveal">
+				<h2>What you actually get</h2>
+				<p class="section-sub">Every report is a plain-English document you can read in ten minutes and hand straight to whoever makes the changes.</p>
+			</div>
+			<figure class="report-preview reveal">
+				<!-- Replace this slot with <img src="/report-preview.png" ... /> once the screenshot is supplied -->
+				<div class="report-preview__slot">
+					<span>Report preview — screenshot to be added at <code>/report-preview.png</code></span>
+				</div>
+				<figcaption>A sample page from a monthly AI visibility report.</figcaption>
+			</figure>
 		</div>
 	</section>
 
@@ -138,7 +172,7 @@ const faqSchema = {
 			<div class="faq-layout">
 				<div class="faq-header reveal">
 					<h2>FAQs</h2>
-					<p class="section-sub">Everything you need to know about SEO, GEO, and AI visibility.</p>
+					<p class="section-sub">Everything you need to know about AI visibility monitoring.</p>
 				</div>
 			<div class="faq-list reveal">
 
@@ -198,7 +232,7 @@ const faqSchema = {
 						<span class="faq-icon">+</span>
 					</button>
 					<div class="faq-answer">
-						<p>We track AI mentions and citations across key platforms, monitor your presence in Google AI Overviews, and benchmark how often your brand appears in LLM responses to relevant queries. The measurement toolkit for AI visibility is maturing rapidly and we stay at the forefront of what's possible — reporting on metrics that actually reflect commercial impact.</p>
+						<p>Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like "best electrolyte powder for runners" or "which recovery protein is worth it" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot.</p>
 					</div>
 				</div>
 
@@ -212,6 +246,46 @@ const faqSchema = {
 					</div>
 				</div>
 
+				<div class="faq-item">
+					<button class="faq-question" aria-expanded="false">
+						How does pricing work?
+						<span class="faq-icon">+</span>
+					</button>
+					<div class="faq-answer">
+						<p>Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" aria-expanded="false">
+						Do you do the fixes as well?
+						<span class="faq-icon">+</span>
+					</button>
+					<div class="faq-answer">
+						<p>No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" aria-expanded="false">
+						Do you work with Shopify brands?
+						<span class="faq-icon">+</span>
+					</button>
+					<div class="faq-answer">
+						<p>Yes. Most of the sports and health brands I work with are DTC ecommerce running on Shopify. The monitoring looks at how AI assistants talk about your brand and products, so it works the same whatever platform your store is built on.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" aria-expanded="false">
+						What's in the monthly report?
+						<span class="faq-icon">+</span>
+					</button>
+					<div class="faq-answer">
+						<p>Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next.</p>
+					</div>
+				</div>
+
 			</div>
 			</div>
 		</div>
@@ -221,8 +295,8 @@ const faqSchema = {
 	<section class="section light" id="contact" data-nav-theme="light">
 		<div class="container container-narrow">
 			<div class="section-header reveal">
-				<h2>Request a Visibility Audit</h2>
-				<p class="section-sub">Tell us about your business and we'll show you exactly where you're visible — and where you're missing out — across Google, AI Overviews, Perplexity, and LLMs.</p>
+				<h2>See where you stand</h2>
+				<p class="section-sub">Tell me about your brand and I'll show you where you're showing up — and where you're missing out — across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude, and who's being recommended instead.</p>
 			</div>
 			<form class="form reveal" id="contact-form">
 				<div class="form-row">
@@ -230,8 +304,8 @@ const faqSchema = {
 					<input type="email" name="email" placeholder="Your email" required />
 				</div>
 				<input type="text" name="website" placeholder="Your website URL (e.g. www.example.com)" required />
-				<textarea name="message" placeholder="Tell us about your business and goals" rows="4"></textarea>
-				<button type="submit" class="btn btn-full" id="contact-submit">Request Your Audit</button>
+				<textarea name="message" placeholder="Tell me about your brand, your categories and your main competitors" rows="4"></textarea>
+				<button type="submit" class="btn btn-full" id="contact-submit">See where I stand</button>
 				<p id="contact-status" style="display:none;margin-top:1rem;text-align:center;font-size:0.9rem;"></p>
 			</form>
 
@@ -267,15 +341,15 @@ const faqSchema = {
 
 						if (res.ok) {
 							form.reset();
-							status.textContent = 'Thanks — we\'ll be in touch shortly.';
+							status.textContent = 'Thanks — I\'ll be in touch shortly.';
 							status.style.color = '#00A878';
-							btn.textContent = 'Request Your Audit';
+							btn.textContent = 'See where I stand';
 							btn.disabled = false;
 						} else {
 							throw new Error();
 						}
 					} catch {
-						status.textContent = 'Something went wrong. Please email us directly at hello@projectone.me';
+						status.textContent = 'Something went wrong. Please email me directly at hello@projectone.me';
 						status.style.color = '#E63946';
 						btn.textContent = 'Request Your Audit';
 						btn.disabled = false;
@@ -293,7 +367,7 @@ const faqSchema = {
 			<div class="footer-top">
 				<div class="footer-brand">
 					<a href="/" class="logo"><Logo /></a>
-					<p class="footer-tagline">SEO · GEO · AI VISIBILITY</p>
+					<p class="footer-tagline">AI VISIBILITY MONITORING · UK SPORTS &amp; HEALTH BRANDS</p>
 				</div>
 				<div class="footer-col">
 					<h4>Contact</h4>
@@ -478,11 +552,12 @@ const faqSchema = {
 	}
 
 	.hero h1 {
-		font-size: clamp(3.5rem, 8vw, 7rem);
+		font-size: clamp(2.1rem, 5vw, 3.6rem);
 		font-weight: 800;
-		line-height: 1.0;
-		letter-spacing: -0.04em;
+		line-height: 1.12;
+		letter-spacing: -0.03em;
 		margin-bottom: 1.5rem;
+		max-width: 900px;
 		color: #fff;
 		transition: color 0.5s ease;
 	}
@@ -576,12 +651,76 @@ const faqSchema = {
 	/* ── Services ── */
 	.services-grid {
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 1.5rem;
 	}
 
-	.services-grid .service-box:nth-child(n+5) {
-		grid-column: span 2;
+	.services-pricing {
+		margin-top: 1.5rem;
+		font-size: 0.95rem;
+		color: #666;
+	}
+
+	.services-pricing a {
+		color: #000;
+		text-decoration: underline;
+	}
+
+	.dont-do {
+		margin-top: 3rem;
+		border-left: 2px solid #000;
+		padding-left: 1.5rem;
+		max-width: 760px;
+	}
+
+	.dont-do h3 {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #000;
+		margin: 0 0 0.5rem;
+	}
+
+	.dont-do p {
+		font-size: 0.95rem;
+		color: #666;
+		line-height: 1.8;
+		margin: 0;
+	}
+
+	/* ── Report preview ── */
+	.report-preview {
+		margin: 0;
+	}
+
+	.report-preview__slot {
+		border: 2px dashed #333;
+		border-radius: 16px;
+		aspect-ratio: 16 / 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 2rem;
+		color: #777;
+		font-size: 0.9rem;
+	}
+
+	.report-preview__slot code {
+		color: #b0b0b0;
+	}
+
+	.report-preview img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 16px;
+	}
+
+	.report-preview figcaption {
+		margin-top: 1rem;
+		text-align: center;
+		font-size: 0.85rem;
+		color: #b0b0b0;
 	}
 
 	.service-box {
@@ -1025,8 +1164,6 @@ const faqSchema = {
 	/* ── Responsive ── */
 	@media (max-width: 900px) {
 		.cases-grid { grid-template-columns: 1fr; }
-		.services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-		.services-grid .service-box:nth-child(n+5) { grid-column: span 1; }
 	}
 
 	@media (max-width: 600px) {
