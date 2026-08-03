@@ -214,11 +214,10 @@ const faqSchema = {
 
 			<p class="clients-label reveal">Trusted by</p>
 			<div class="clients-row reveal">
-				<!-- Swap these text wordmarks for <img> logos when supplied -->
-				<div class="client-logo">The General Classification</div>
-				<div class="client-logo">Fluid Fitness</div>
-				<div class="client-logo">PosTea</div>
-				<div class="client-logo">Drops</div>
+				<img class="client-logo client-logo--tgc" src="/logos/general-classification.png" alt="The General Classification" loading="lazy" />
+				<span class="client-wordmark">Fluid Fitness</span>
+				<img class="client-logo" src="/logos/postea.png" alt="PosTea" loading="lazy" />
+				<img class="client-logo" src="/logos/drops.svg" alt="Drops" loading="lazy" />
 				<span class="client-more">&amp; more</span>
 			</div>
 		</div>
@@ -1450,19 +1449,37 @@ const faqSchema = {
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		gap: 2rem 4rem;
+		gap: 2rem 3.25rem;
 	}
 
 	.client-logo {
-		font-size: clamp(1.3rem, 3.5vw, 2rem);
-		font-weight: 800;
-		letter-spacing: -0.03em;
-		color: #fff;
-		opacity: 0.5;
+		height: 30px;
+		width: auto;
+		max-width: 175px;
+		object-fit: contain;
+		/* simple wordmarks knock to white so they read on black */
+		filter: brightness(0) invert(1);
+		opacity: 0.6;
 		transition: opacity 0.25s ease;
 	}
 
 	.client-logo:hover { opacity: 1; }
+
+	/* two-line wordmark — sits taller */
+	.client-logo--tgc { height: 48px; }
+
+	/* shown as a text wordmark rather than a logo */
+	.client-wordmark {
+		font-size: 1.45rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: #fff;
+		white-space: nowrap;
+		opacity: 0.6;
+		transition: opacity 0.25s ease;
+	}
+
+	.client-wordmark:hover { opacity: 1; }
 
 	.client-more {
 		font-size: clamp(1rem, 2vw, 1.2rem);
@@ -1730,7 +1747,7 @@ const faqSchema = {
 	/* ── Responsive ── */
 	@media (max-width: 600px) {
 		.services-grid { grid-template-columns: 1fr; }
-		.clients-row { gap: 1.5rem 2.5rem; }
+		.clients-row { gap: 1.5rem 2rem; }
 	}
 
 	@media (max-width: 700px) {
