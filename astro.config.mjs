@@ -8,5 +8,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://projectone.me',
   adapter: cloudflare(),
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      // /privacy is noindexed — keep it out of the sitemap
+      filter: (page) => !page.includes('/privacy'),
+    }),
+  ]
 });

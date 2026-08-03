@@ -7,7 +7,7 @@ interface Props {
 }
 const { title } = Astro.props;
 ---
-<Layout>
+<Layout title={`${title} | Project One`} noindex={true}>
   <nav id="nav" data-theme="dark">
     <div class="container nav-inner">
       <a href="/" class="logo"><Logo /></a>
@@ -26,27 +26,17 @@ const { title } = Astro.props;
       <div class="footer-top">
         <div class="footer-brand">
           <a href="/" class="logo"><Logo /></a>
-          <p class="footer-tagline">SEO · GEO · AI VISIBILITY</p>
+          <p class="footer-tagline">AI VISIBILITY MONITORING &middot; UK SPORTS &amp; HEALTH BRANDS</p>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:hello@projectone.me">hello@projectone.me</a></li>
-            <li><a href="tel:+441234567890">+44 (0)1234 567 890</a></li>
-            <li>24 Example Street<br />London, EC1A 1BB<br />United Kingdom</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/cookie-policy">Cookie Policy</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} <span style="font-weight:300">project_</span>one. All rights reserved.</p>
+        <p>&copy; 2026 PROJECT ONE &middot; PROJECTONE.ME</p>
       </div>
     </div>
   </footer>
@@ -206,7 +196,7 @@ const { title } = Astro.props;
 
   .footer-top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid #222;

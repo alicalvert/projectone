@@ -1,9 +1,16 @@
-# Project One — all crawlers welcome, including AI assistants
+# Project One - all crawlers welcome, including AI assistants
 
 User-agent: *
 Allow: /
 
-# AI / LLM crawlers — explicitly allowed
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI / LLM crawlers - explicitly allowed
 User-agent: GPTBot
 Allow: /
 
@@ -17,6 +24,12 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://projectone.me/sitemap-index.xml
