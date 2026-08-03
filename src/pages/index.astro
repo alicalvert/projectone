@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
 
 // Flip to true once /public/report-preview.png has been added.
-const SHOW_REPORT_PREVIEW = false;
+const SHOW_REPORT_PREVIEW = true;
+
+// Flip to true once the case study facts below are confirmed.
+const SHOW_CASE_STUDIES = true;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -14,7 +17,7 @@ const faqSchema = {
       "name": "What's in the monthly report?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next."
+        "text": "Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are, with a short, prioritised list of what to tackle next."
       }
     },
     {
@@ -22,7 +25,7 @@ const faqSchema = {
       "name": "How does pricing work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors."
+        "text": "Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in. You can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors."
       }
     },
     {
@@ -30,7 +33,7 @@ const faqSchema = {
       "name": "Do you do the fixes as well?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency."
+        "text": "No. I diagnose where your brand is invisible and monitor how that changes. I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency."
       }
     },
     {
@@ -38,7 +41,7 @@ const faqSchema = {
       "name": "How do you measure AI visibility?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like \"best electrolyte powder for runners\" or \"which recovery protein is worth it\" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot."
+        "text": "Every month I run a set of buyer-voiced questions (the natural-language prompts real shoppers actually type, like \"best electrolyte powder for runners\" or \"which recovery protein is worth it\") across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot."
       }
     },
     {
@@ -46,7 +49,7 @@ const faqSchema = {
       "name": "What does a visibility audit cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer — usually within about a week."
+        "text": "The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer, usually within about a week."
       }
     },
     {
@@ -62,7 +65,7 @@ const faqSchema = {
       "name": "What is AI visibility and why does it matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong."
+        "text": "AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience, even if your Google rankings are strong."
       }
     },
     {
@@ -70,7 +73,7 @@ const faqSchema = {
       "name": "How long does it take to see results?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan — I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers."
+        "text": "The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan. I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers."
       }
     },
     {
@@ -78,7 +81,7 @@ const faqSchema = {
       "name": "What is Generative Engine Optimisation (GEO)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself."
+        "text": "GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines like Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself."
       }
     },
     {
@@ -86,7 +89,7 @@ const faqSchema = {
       "name": "How is GEO different from SEO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity."
+        "text": "SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other (strong SEO foundations make GEO significantly more effective), but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity."
       }
     },
     {
@@ -94,7 +97,7 @@ const faqSchema = {
       "name": "Do I need GEO if my SEO is already performing well?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy."
+        "text": "Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals (structured data, brand mentions, content clarity, and third-party citations) that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy."
       }
     }
   ]
@@ -108,16 +111,16 @@ const faqSchema = {
 	<nav id="nav" data-theme="dark">
 		<div class="container nav-inner">
 			<a href="/" class="logo"><Logo /></a>
-			<a href="#contact" class="btn-nav">Request an Audit</a>
+			<a href="#contact" class="btn-nav">See where you stand</a>
 		</div>
 	</nav>
 
-	<!-- Hero — DARK -->
+	<!-- Hero - DARK -->
 	<section class="hero" id="hero" data-nav-theme="dark">
 <div class="container">
 			<p class="eyebrow reveal">AI Visibility Monitoring · UK Sports &amp; Health Brands</p>
 			<h1 class="reveal reveal-delay-1">When someone asks ChatGPT for the best UK electrolyte powder, does your brand come up<span style="color:#FF2D78;margin-left:-0.06em">?</span></h1>
-			<p class="hero-sub reveal reveal-delay-2">Project One gives UK sports and health brands a monthly picture of where they appear across the big AI assistants — and which competitors get recommended instead.</p>
+			<p class="hero-sub reveal reveal-delay-2">Project One gives UK sports and health brands a monthly picture of where they appear across the big AI assistants, and which competitors get recommended instead.</p>
 			<div class="hero-cta reveal reveal-delay-3">
 				<a href="#contact" class="btn">See where you stand</a>
 				<a href="#services" class="btn btn-ghost">See what's tracked</a>
@@ -125,7 +128,7 @@ const faqSchema = {
 		</div>
 	</section>
 
-	<!-- Services — LIGHT -->
+	<!-- Services - LIGHT -->
 	<section class="section light" id="services" data-nav-theme="light">
 		<div class="container">
 			<div class="section-header reveal">
@@ -133,42 +136,188 @@ const faqSchema = {
 				<p class="section-sub">Two products. One question: are the AI assistants recommending your brand, or someone else's?</p>
 			</div>
 			<div class="services-grid">
-				<div class="service-box reveal">
-					<span class="service-num">01 · One-off</span>
+				<article class="service-box reveal">
+					<div class="service-top">
+						<span class="service-tag">One-off</span>
+						<span class="service-meta">~1 week</span>
+					</div>
 					<h3>Visibility Gap Report</h3>
-					<p>A one-off audit of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories — electrolyte powders, protein, recovery supplements, running kit — and record where you appear and who gets recommended instead. You get a written report with a prioritised action plan, usually within about a week.</p>
-				</div>
-				<div class="service-box reveal service-box--highlight">
-					<span class="service-num">02 · Recurring</span>
+					<p class="service-lead">A clear snapshot of exactly how your brand shows up when shoppers ask AI what to buy.</p>
+					<ul class="service-points">
+						<li>Buyer-voiced questions run across all five assistants</li>
+						<li>Where you appear, and who's recommended instead</li>
+						<li>The source domains shaping those answers</li>
+						<li>Whether the AI crawlers can actually read and cite your site</li>
+						<li>How clear your structured data and brand entity are to AI</li>
+						<li>A prioritised action plan for your developer</li>
+					</ul>
+				</article>
+				<article class="service-box reveal service-box--highlight">
+					<div class="service-top">
+						<span class="service-tag">Monthly</span>
+						<span class="service-meta">Every month</span>
+					</div>
 					<h3>Monthly Monitoring</h3>
-					<p>Ongoing tracking across the same five assistants. Each month you get a report showing which questions surface your brand, how that's moved since last month, which competitors are gaining ground in your categories, and where the new gaps are. It turns a one-off snapshot into a trend you can act on.</p>
-				</div>
+					<p class="service-lead">Turn that snapshot into a trend you can actually act on.</p>
+					<ul class="service-points">
+						<li>Tracked across ChatGPT, AI Overviews, Gemini, Perplexity &amp; Claude</li>
+						<li>What's moved since last month</li>
+						<li>Which competitors are gaining ground</li>
+						<li>Where the new gaps are opening up</li>
+						<li>A monthly check that the AI crawlers still have access</li>
+					</ul>
+				</article>
 			</div>
-			<p class="services-pricing reveal">Fixed-price audit, monthly retainer for monitoring, no long-term contract — <a href="#contact">get in touch for a quote</a>.</p>
+
+			<div class="services-note reveal">
+				<span class="pill">Fixed-price audit</span>
+				<span class="pill">Monthly retainer</span>
+				<span class="pill">No long-term contract</span>
+				<a href="#contact" class="services-quote">Get a quote &rarr;</a>
+			</div>
+
 			<div class="dont-do reveal">
 				<h3>What I don't do</h3>
-				<p>I don't implement the fixes. No technical changes, no content writing, no link building. I diagnose where your brand is invisible and monitor how it changes over time — the action plan is written in plain English so you can hand it straight to your own developer or agency to execute.</p>
+				<p>I diagnose and monitor. I don't implement. The plan is written in plain English to hand straight to your own developer or agency.</p>
+				<div class="dont-list">
+					<span class="dont-item">Technical changes</span>
+					<span class="dont-item">Content writing</span>
+					<span class="dont-item">Link building</span>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Report preview — DARK (hidden until the screenshot exists; flip SHOW_REPORT_PREVIEW in the frontmatter) -->
+	<!-- Clients - DARK (hidden until logos confirmed; flip SHOW_CASE_STUDIES in the frontmatter) -->
+	{SHOW_CASE_STUDIES && (
+	<section class="section dark" id="cases" data-nav-theme="dark">
+		<div class="container">
+			<div class="section-header reveal">
+				<h2>In good company</h2>
+				<p class="section-sub">Every day, shoppers ask AI assistants what to buy. I track those answers for health and fitness brands like these.</p>
+			</div>
+
+			<div class="ai-search reveal">
+				<p class="ai-search-eyebrow">Someone asks an AI assistant…</p>
+				<div class="ai-search-bar">
+					<svg class="ai-search-spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+					<span class="ai-search-text"><span id="ai-typed">best UK electrolyte drinks for endurance athletes</span><span class="ai-caret" aria-hidden="true"></span></span>
+				</div>
+				<div class="ai-engines" id="ai-engines" aria-label="Assistants monitored">
+					<span>ChatGPT</span>
+					<span>AI Overviews</span>
+					<span>Gemini</span>
+					<span>Perplexity</span>
+					<span>Claude</span>
+				</div>
+			</div>
+
+			<p class="clients-label reveal">Trusted by</p>
+			<div class="clients-row reveal">
+				<!-- Swap these text wordmarks for <img> logos when supplied -->
+				<div class="client-logo">The General Classification</div>
+				<div class="client-logo">Fluid Fitness</div>
+				<div class="client-logo">PosTea</div>
+				<div class="client-logo">Drops</div>
+				<span class="client-more">&amp; more</span>
+			</div>
+		</div>
+	</section>
+	)}
+
+	<!-- Report preview - LIGHT (flip SHOW_REPORT_PREVIEW in the frontmatter to hide) -->
 	{SHOW_REPORT_PREVIEW && (
-	<section class="section dark" id="report" data-nav-theme="dark">
+	<section class="section light" id="report" data-nav-theme="light">
 		<div class="container">
 			<div class="section-header reveal">
 				<h2>What you actually get</h2>
 				<p class="section-sub">Every report is a plain-English document you can read in ten minutes and hand straight to whoever makes the changes.</p>
 			</div>
 			<figure class="report-preview reveal">
-				<img src="/report-preview.png" alt="A sample page from a monthly AI visibility report" />
-				<figcaption>A sample page from a monthly AI visibility report.</figcaption>
+				<div class="report-stage">
+				<div class="report-mock" data-report>
+					<div class="report-mock__head">
+						<div>
+							<p class="report-mock__eyebrow">Monthly AI Visibility Report</p>
+							<p class="report-mock__title">Where your brand shows up</p>
+						</div>
+						<span class="report-mock__badge">Overview</span>
+					</div>
+					<div class="report-mock__bars">
+						<div class="report-bar" style="--val:72%"><span class="report-bar__name">ChatGPT</span><span class="report-bar__track"><span class="report-bar__fill"></span></span><span class="report-bar__num" data-count="72">0%</span></div>
+						<div class="report-bar" style="--val:61%"><span class="report-bar__name">Perplexity</span><span class="report-bar__track"><span class="report-bar__fill"></span></span><span class="report-bar__num" data-count="61">0%</span></div>
+						<div class="report-bar" style="--val:54%"><span class="report-bar__name">AI Overviews</span><span class="report-bar__track"><span class="report-bar__fill"></span></span><span class="report-bar__num" data-count="54">0%</span></div>
+						<div class="report-bar" style="--val:45%"><span class="report-bar__name">Claude</span><span class="report-bar__track"><span class="report-bar__fill"></span></span><span class="report-bar__num" data-count="45">0%</span></div>
+						<div class="report-bar" style="--val:38%"><span class="report-bar__name">Gemini</span><span class="report-bar__track"><span class="report-bar__fill"></span></span><span class="report-bar__num" data-count="38">0%</span></div>
+					</div>
+					<div class="report-mock__foot">
+						<span class="report-chip report-chip--up">&#9650; 3 new mentions</span>
+						<span class="report-chip">vs 4 competitors</span>
+						<span class="report-chip report-chip--flag">2 gaps flagged</span>
+					</div>
+				</div>
+
+				<div class="report-widget report-widget--sov" aria-hidden="true">
+					<div class="sov-ring"><span>34%</span></div>
+					<div class="sov-meta"><strong>Share of voice</strong><span>vs your category</span></div>
+				</div>
+
+				<div class="report-widget report-widget--sources" aria-hidden="true">
+					<p class="widget-label">Top cited sources</p>
+					<ul class="widget-sources">
+						<li><span class="src-dot"></span>reddit.com</li>
+						<li><span class="src-dot"></span>myprotein.com</li>
+						<li><span class="src-dot"></span>runnersworld.com</li>
+					</ul>
+				</div>
+
+				<div class="report-widget report-widget--mention" aria-hidden="true">
+					<p class="widget-label">Sample mention</p>
+					<p class="mention-quote">"For endurance athletes, <mark>your brand</mark> is a solid pick..."</p>
+					<span class="mention-src">ChatGPT</span>
+				</div>
+
+				<div class="report-widget report-widget--crawler" aria-hidden="true">
+					<span class="crawler-check">&#10003;</span>
+					<div><strong>AI crawlers</strong><span>GPTBot &middot; ClaudeBot allowed</span></div>
+				</div>
+
+				<div class="report-widget report-widget--trend" aria-hidden="true">
+					<p class="widget-label">Mentions trend</p>
+					<svg class="spark" viewBox="0 0 100 32" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,27 20,23 40,25 60,15 80,11 100,4" fill="none" stroke="#FF2D78" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					<span class="trend-stat">&#9650; +3 this month</span>
+				</div>
+
+				<div class="report-widget report-widget--rank" aria-hidden="true">
+					<p class="widget-label">Category leaderboard</p>
+					<ol class="rank-list">
+						<li><span class="rank-pos">1</span><span>Competitor A</span><span class="rank-val">41%</span></li>
+						<li class="rank-you"><span class="rank-pos">2</span><span>Your brand</span><span class="rank-val">34%</span></li>
+						<li><span class="rank-pos">3</span><span>Competitor B</span><span class="rank-val">18%</span></li>
+					</ol>
+				</div>
+
+				<div class="report-widget report-widget--sentiment" aria-hidden="true">
+					<p class="widget-label">How you're described</p>
+					<div class="sentiment-bar">
+						<span class="seg seg-pos" style="width:78%"></span>
+						<span class="seg seg-neu" style="width:16%"></span>
+						<span class="seg seg-neg" style="width:6%"></span>
+					</div>
+					<div class="sentiment-key">
+						<span><i class="dot-pos"></i>78% positive</span>
+						<span><i class="dot-neg"></i>6% negative</span>
+					</div>
+				</div>
+
+				</div>
+				<figcaption>A sample of what your monthly report looks like. Illustrative figures, not a real brand.</figcaption>
 			</figure>
 		</div>
 	</section>
 	)}
 
-	<!-- FAQs — DARK -->
+	<!-- FAQs - DARK -->
 	<section class="section dark" id="faqs" data-nav-theme="dark">
 		<div class="container">
 			<div class="faq-layout">
@@ -184,7 +333,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next.</p>
+							<p>Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are, with a short, prioritised list of what to tackle next.</p>
 						</div>
 					</div>
 
@@ -194,7 +343,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors.</p>
+							<p>Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in. You can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors.</p>
 						</div>
 					</div>
 
@@ -204,7 +353,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency.</p>
+							<p>No. I diagnose where your brand is invisible and monitor how that changes. I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency.</p>
 						</div>
 					</div>
 
@@ -214,7 +363,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like "best electrolyte powder for runners" or "which recovery protein is worth it" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot.</p>
+							<p>Every month I run a set of buyer-voiced questions (the natural-language prompts real shoppers actually type, like "best electrolyte powder for runners" or "which recovery protein is worth it") across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot.</p>
 						</div>
 					</div>
 
@@ -224,7 +373,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer — usually within about a week.</p>
+							<p>The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer, usually within about a week.</p>
 						</div>
 					</div>
 
@@ -244,7 +393,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong.</p>
+							<p>AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience, even if your Google rankings are strong.</p>
 						</div>
 					</div>
 
@@ -254,7 +403,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan — I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers.</p>
+							<p>The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan. I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers.</p>
 						</div>
 					</div>
 
@@ -264,7 +413,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself.</p>
+							<p>GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines like Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself.</p>
 						</div>
 					</div>
 
@@ -274,7 +423,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity.</p>
+							<p>SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other (strong SEO foundations make GEO significantly more effective), but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity.</p>
 						</div>
 					</div>
 
@@ -284,7 +433,7 @@ const faqSchema = {
 							<span class="faq-icon">+</span>
 						</button>
 						<div class="faq-answer">
-							<p>Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy.</p>
+							<p>Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals (structured data, brand mentions, content clarity, and third-party citations) that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy.</p>
 						</div>
 					</div>
 
@@ -293,12 +442,12 @@ const faqSchema = {
 		</div>
 	</section>
 
-	<!-- Contact — LIGHT -->
+	<!-- Contact - LIGHT -->
 	<section class="section light" id="contact" data-nav-theme="light">
 		<div class="container container-narrow">
 			<div class="section-header reveal">
 				<h2>See where you stand</h2>
-				<p class="section-sub">Tell me about your brand and I'll show you where you're showing up — and where you're missing out — across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude, and who's being recommended instead.</p>
+				<p class="section-sub">Tell me about your brand and I'll show you where you're showing up, and where you're missing out, across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude, and who's being recommended instead.</p>
 			</div>
 			<form class="form reveal" id="contact-form">
 				<div class="form-row">
@@ -343,7 +492,7 @@ const faqSchema = {
 
 						if (res.ok) {
 							form.reset();
-							status.textContent = 'Thanks — I\'ll be in touch shortly.';
+							status.textContent = 'Thanks, I\'ll be in touch shortly.';
 							status.style.color = '#00A878';
 							btn.textContent = 'See where I stand';
 							btn.disabled = false;
@@ -657,86 +806,481 @@ const faqSchema = {
 		gap: 1.5rem;
 	}
 
-	.services-pricing {
-		margin-top: 1.5rem;
-		font-size: 0.95rem;
-		color: #666;
+	.services-note {
+		margin-top: 1.75rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem;
 	}
 
-	.services-pricing a {
-		color: #000;
-		text-decoration: underline;
+	.services-note .pill {
+		font-size: 0.78rem;
+		font-weight: 600;
+		color: #444;
+		background: #f3f4f6;
+		border-radius: 999px;
+		padding: 0.4rem 0.9rem;
 	}
+
+	.services-quote {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: #000;
+		text-decoration: none;
+		border-bottom: 2px solid #FF2D78;
+		padding-bottom: 1px;
+		margin-left: 0.25rem;
+		transition: opacity 0.2s ease;
+	}
+
+	.services-quote:hover { opacity: 0.6; }
 
 	.dont-do {
 		margin-top: 3rem;
-		border-left: 2px solid #000;
-		padding-left: 1.5rem;
-		max-width: 760px;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		border: 1px solid #e5e7eb;
+		border-radius: 16px;
+		padding: 1.75rem 2rem;
+		background: #fafafa;
 	}
 
 	.dont-do h3 {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		font-weight: 700;
 		color: #000;
-		margin: 0 0 0.5rem;
+		margin: 0;
 	}
 
 	.dont-do p {
 		font-size: 0.95rem;
 		color: #666;
-		line-height: 1.8;
+		line-height: 1.7;
 		margin: 0;
+		max-width: 640px;
 	}
 
-	/* ── Report preview ── */
+	.dont-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.dont-item {
+		font-size: 0.82rem;
+		font-weight: 600;
+		color: #999;
+		text-decoration: line-through;
+		text-decoration-color: #FF2D78;
+		text-decoration-thickness: 2px;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		padding: 0.4rem 0.85rem;
+	}
+
+	/* ── Report preview (animated mock) ── */
 	.report-preview {
 		margin: 0;
 	}
 
-	.report-preview img {
-		display: block;
-		width: 100%;
-		height: auto;
-		border-radius: 16px;
-	}
-
 	.report-preview figcaption {
-		margin-top: 1rem;
+		margin-top: 1.25rem;
 		text-align: center;
 		font-size: 0.85rem;
-		color: #b0b0b0;
+		color: #999;
 	}
 
-	.service-box {
+	.report-mock {
+		max-width: 620px;
+		margin: 0 auto;
+		background: #fff;
 		border: 1px solid #e5e7eb;
-		border-radius: 16px;
-		padding: 2rem;
+		border-radius: 18px;
+		padding: 1.75rem;
+		box-shadow: 0 40px 70px -45px rgba(0, 0, 0, 0.4);
+	}
+
+	.report-mock__head {
 		display: flex;
-		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
 		gap: 1rem;
+		margin-bottom: 1.6rem;
 	}
 
-	.service-num {
-		font-size: 0.75rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		color: #aaa;
-	}
-
-	.service-box h3 {
-		font-size: 1.1rem;
+	.report-mock__eyebrow {
+		font-size: 0.68rem;
 		font-weight: 700;
-		letter-spacing: -0.01em;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #FF2D78;
+		margin: 0 0 0.35rem;
+	}
+
+	.report-mock__title {
+		font-size: 1.05rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
 		color: #000;
 		margin: 0;
 	}
 
-	.service-box p {
-		font-size: 0.9rem;
-		color: #666;
-		line-height: 1.7;
+	.report-mock__badge {
+		flex-shrink: 0;
+		font-size: 0.66rem;
+		font-weight: 600;
+		color: #888;
+		border: 1px solid #e5e7eb;
+		border-radius: 999px;
+		padding: 0.3rem 0.7rem;
+	}
+
+	.report-mock__bars {
+		display: flex;
+		flex-direction: column;
+		gap: 0.95rem;
+	}
+
+	.report-bar {
+		display: grid;
+		grid-template-columns: 6.5rem 1fr 2.8rem;
+		align-items: center;
+		gap: 0.85rem;
+	}
+
+	.report-bar__name {
+		font-size: 0.82rem;
+		font-weight: 600;
+		color: #444;
+	}
+
+	.report-bar__track {
+		height: 10px;
+		border-radius: 999px;
+		background: #f0f0f0;
+		overflow: hidden;
+	}
+
+	.report-bar__fill {
+		display: block;
+		height: 100%;
+		width: 0;
+		border-radius: 999px;
+		background: linear-gradient(90deg, #FF2D78, #ff7aab);
+		transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.report-mock.is-live .report-bar__fill { width: var(--val); }
+
+	.report-bar:nth-child(1) .report-bar__fill { transition-delay: 0.05s; }
+	.report-bar:nth-child(2) .report-bar__fill { transition-delay: 0.15s; }
+	.report-bar:nth-child(3) .report-bar__fill { transition-delay: 0.25s; }
+	.report-bar:nth-child(4) .report-bar__fill { transition-delay: 0.35s; }
+	.report-bar:nth-child(5) .report-bar__fill { transition-delay: 0.45s; }
+
+	.report-bar__num {
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: #000;
+		text-align: right;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.report-mock__foot {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 1.6rem;
+		padding-top: 1.3rem;
+		border-top: 1px solid #f0f0f0;
+	}
+
+	.report-chip {
+		font-size: 0.72rem;
+		font-weight: 600;
+		color: #555;
+		background: #f7f7f8;
+		border-radius: 8px;
+		padding: 0.35rem 0.7rem;
+	}
+
+	.report-chip--up { color: #0a7d43; background: rgba(10, 125, 67, 0.09); }
+	.report-chip--flag { color: #FF2D78; background: rgba(255, 45, 120, 0.09); }
+
+	/* ── Overlapping widget collage ── */
+	.report-stage {
+		position: relative;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 3.5rem 0;
+	}
+
+	.report-stage .report-mock {
+		position: relative;
+		z-index: 2;
+	}
+
+	.report-widget {
+		position: absolute;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 14px;
+		padding: 0.9rem 1rem;
+		box-shadow: 0 24px 45px -30px rgba(0, 0, 0, 0.45);
+		opacity: 0;
+		animation:
+			widget-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both,
+			widget-float 6.5s ease-in-out 0.6s infinite;
+		animation-play-state: paused, paused;
+	}
+
+	/* Entrance fires when the report scrolls into view (observer adds .is-live) */
+	.report-mock.is-live ~ .report-widget {
+		animation-play-state: running, running;
+	}
+
+	@keyframes widget-in {
+		from { opacity: 0; transform: translateY(26px) scale(0.94); }
+		to   { opacity: 1; transform: translateY(0) scale(1); }
+	}
+
+	.report-widget--sov {
+		top: 0;
+		right: -18px;
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		animation-delay: 0.2s, 0.8s;
+	}
+
+	.sov-ring {
+		position: relative;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background: conic-gradient(#FF2D78 34%, #ececec 0);
+		display: grid;
+		place-items: center;
+		flex-shrink: 0;
+	}
+
+	.sov-ring::before {
+		content: "";
+		position: absolute;
+		inset: 7px;
+		border-radius: 50%;
+		background: #fff;
+	}
+
+	.sov-ring span { position: relative; font-size: 0.72rem; font-weight: 800; color: #000; }
+	.sov-meta { display: flex; flex-direction: column; }
+	.sov-meta strong { font-size: 0.78rem; color: #000; }
+	.sov-meta span { font-size: 0.68rem; color: #999; }
+
+	.report-widget--sources {
+		bottom: 0;
+		left: -20px;
+		z-index: 3;
+		width: 190px;
+		animation-delay: 0.3s, 0.9s;
+	}
+
+	.widget-label {
+		font-size: 0.62rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #aaa;
+		margin: 0 0 0.55rem;
+	}
+
+	.widget-sources { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.42rem; }
+	.widget-sources li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; color: #444; }
+	.src-dot { width: 7px; height: 7px; border-radius: 50%; background: #FF2D78; flex-shrink: 0; }
+
+	.report-widget--mention {
+		top: 45%;
+		right: -28px;
+		z-index: 4;
+		width: 210px;
+		animation-delay: 0.5s, 1.1s;
+	}
+
+	.mention-quote { font-size: 0.8rem; line-height: 1.5; color: #333; margin: 0 0 0.5rem; }
+	.mention-quote mark { background: rgba(255, 45, 120, 0.15); color: #c11760; font-weight: 700; padding: 0 2px; border-radius: 3px; }
+	.mention-src { font-size: 0.66rem; font-weight: 600; color: #999; }
+
+	.report-widget--crawler {
+		top: 18px;
+		left: -22px;
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		animation-delay: 0.1s, 0.7s;
+	}
+
+	.crawler-check {
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		background: rgba(10, 125, 67, 0.12);
+		color: #0a7d43;
+		display: grid;
+		place-items: center;
+		font-size: 0.8rem;
+		font-weight: 800;
+		flex-shrink: 0;
+	}
+
+	.report-widget--crawler strong { display: block; font-size: 0.78rem; color: #000; }
+	.report-widget--crawler span { font-size: 0.66rem; color: #999; }
+
+	.report-widget--trend {
+		bottom: 6px;
+		right: -16px;
+		z-index: 3;
+		width: 150px;
+		animation-delay: 0.4s, 1s;
+	}
+
+	.spark { display: block; width: 100%; height: 30px; margin: 0.15rem 0 0.45rem; }
+	.trend-stat { font-size: 0.74rem; font-weight: 800; color: #0a7d43; }
+
+	.report-widget--rank {
+		top: 40%;
+		left: -30px;
+		z-index: 4;
+		width: 200px;
+		animation-delay: 0.35s, 0.95s;
+	}
+
+	.rank-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+	.rank-list li { display: grid; grid-template-columns: 1.1rem 1fr auto; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; color: #444; }
+	.rank-pos { font-size: 0.7rem; font-weight: 800; color: #aaa; }
+	.rank-val { font-weight: 700; color: #888; font-variant-numeric: tabular-nums; }
+	.rank-you { color: #000; }
+	.rank-you .rank-pos { color: #FF2D78; }
+	.rank-you .rank-val { color: #FF2D78; }
+
+	.report-widget--sentiment {
+		bottom: -14px;
+		left: 34%;
+		z-index: 4;
+		width: 210px;
+		animation-delay: 0.45s, 1.05s;
+	}
+
+	.sentiment-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: #f0f0f0; margin-bottom: 0.5rem; }
+	.sentiment-bar .seg { display: block; height: 100%; }
+	.seg-pos { background: #0a7d43; }
+	.seg-neu { background: #d8d8d8; }
+	.seg-neg { background: #FF2D78; }
+	.sentiment-key { display: flex; justify-content: space-between; font-size: 0.66rem; font-weight: 600; color: #666; }
+	.sentiment-key i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+	.dot-pos { background: #0a7d43; }
+	.dot-neg { background: #FF2D78; }
+
+	@keyframes widget-float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-7px); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.report-bar__fill { transition: none; }
+		.report-widget { opacity: 1; animation: none; }
+	}
+
+	@media (max-width: 900px) {
+		.report-stage { max-width: 560px; padding: 0; }
+		.report-widget {
+			position: static;
+			width: auto;
+			margin-top: 1rem;
+			opacity: 1;
+			animation: none;
+			box-shadow: 0 20px 40px -32px rgba(0, 0, 0, 0.35);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.report-bar { grid-template-columns: 5rem 1fr 2.4rem; gap: 0.6rem; }
+	}
+
+	.service-box {
+		border: 1px solid #e5e7eb;
+		border-radius: 20px;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+	}
+
+	.service-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.service-tag {
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #FF2D78;
+		background: rgba(255, 45, 120, 0.1);
+		border-radius: 999px;
+		padding: 0.35rem 0.8rem;
+	}
+
+	.service-meta {
+		font-size: 0.78rem;
+		font-weight: 600;
+		color: #aaa;
+	}
+
+	.service-box h3 {
+		font-size: 1.4rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: #000;
 		margin: 0;
+	}
+
+	.service-lead {
+		font-size: 1rem;
+		color: #444;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.service-points {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
+		margin: 0.25rem 0 0;
+		padding: 0;
+	}
+
+	.service-points li {
+		position: relative;
+		padding-left: 1.6rem;
+		font-size: 0.9rem;
+		color: #555;
+		line-height: 1.5;
+	}
+
+	.service-points li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #FF2D78;
+		font-weight: 800;
 	}
 
 	.service-box--highlight {
@@ -744,9 +1288,14 @@ const faqSchema = {
 		border-color: #000;
 	}
 
-	.service-box--highlight .service-num { color: #b0b0b0; }
 	.service-box--highlight h3 { color: #fff; }
-	.service-box--highlight p  { color: #c8c8c8; }
+	.service-box--highlight .service-lead { color: #d8d8d8; }
+	.service-box--highlight .service-points li { color: #c8c8c8; }
+	.service-box--highlight .service-meta { color: #888; }
+	.service-box--highlight .service-tag {
+		color: #fff;
+		background: #FF2D78;
+	}
 
 	/* ── Why sub ── */
 	.why-sub {
@@ -792,105 +1341,137 @@ const faqSchema = {
 		line-height: 1.5;
 	}
 
-	/* ── Case studies grid ── */
-	.cases-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1.5rem;
-		align-items: start;
+	/* ── Clients / AI search ── */
+	.ai-search {
+		max-width: 620px;
+		margin: 0 auto 4.5rem;
 	}
 
-	.case-card {
-		min-width: 0;
-		background: #f5f5f5;
-		border: 1px solid #e5e7eb;
-		border-radius: 16px;
-		padding: 1.5rem;
-	}
-
-	.case-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		margin-bottom: 1.5rem;
-	}
-
-	.case-client {
-		font-size: 1.4rem;
-		font-weight: 800;
-		color: #000;
-		margin-bottom: 0.25rem;
-		letter-spacing: -0.02em;
-	}
-
-	.case-url {
-		font-size: 0.85rem;
+	.ai-search-eyebrow {
+		text-align: center;
+		font-size: 0.8rem;
 		color: #888;
-		text-decoration: none;
-		transition: color 0.2s;
+		margin-bottom: 1rem;
 	}
 
-	.case-url:hover { color: #000; }
+	.ai-search-bar {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		background: #111;
+		border: 1px solid #2a2a2a;
+		border-radius: 14px;
+		padding: 1.15rem 1.35rem;
+		box-shadow: 0 20px 60px -30px rgba(255, 45, 120, 0.5);
+	}
 
-	.case-tag {
-		font-size: 0.75rem;
+	.ai-search-spark {
+		width: 20px;
+		height: 20px;
+		color: #FF2D78;
+		flex-shrink: 0;
+	}
+
+	.ai-search-text {
+		font-size: 1.05rem;
+		font-weight: 500;
+		color: #fff;
+	}
+
+	.ai-caret {
+		display: inline-block;
+		width: 2px;
+		height: 1.05em;
+		background: #FF2D78;
+		margin-left: 3px;
+		vertical-align: text-bottom;
+		animation: caret-blink 1.1s steps(1) infinite;
+	}
+
+	@keyframes caret-blink {
+		0%, 50% { opacity: 1; }
+		50.01%, 100% { opacity: 0; }
+	}
+
+	.ai-engines {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1.1rem;
+	}
+
+	.ai-engines span {
+		font-size: 0.7rem;
 		font-weight: 600;
-		padding: 0.3rem 0.75rem;
-		border-radius: 6px;
-		border: 1px solid #d1d5db;
-		color: #666;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
+		color: #999;
+		border: 1px solid #2a2a2a;
+		border-radius: 999px;
+		padding: 0.35rem 0.85rem;
+		transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 	}
 
-	.case-challenge {
-		color: #666;
-		margin-bottom: 2rem;
-		font-size: 0.95rem;
-		line-height: 1.7;
+	/* Sequential "scanning" pulse across the five engines */
+	.ai-engines span {
+		animation: engine-pulse 6s ease-in-out infinite;
 	}
 
-	.case-challenge strong { color: #000; }
+	.ai-engines span:nth-child(1) { animation-delay: 0s; }
+	.ai-engines span:nth-child(2) { animation-delay: 0.6s; }
+	.ai-engines span:nth-child(3) { animation-delay: 1.2s; }
+	.ai-engines span:nth-child(4) { animation-delay: 1.8s; }
+	.ai-engines span:nth-child(5) { animation-delay: 2.4s; }
 
-	.case-stats {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		background: #000;
-		border-radius: 12px;
-		overflow: hidden;
-		margin-bottom: 1.5rem;
+	@keyframes engine-pulse {
+		0%, 100% { color: #999; border-color: #2a2a2a; box-shadow: none; }
+		5% { color: #fff; border-color: #FF2D78; box-shadow: 0 0 14px -2px rgba(255, 45, 120, 0.6); }
+		12% { color: #999; border-color: #2a2a2a; box-shadow: none; }
 	}
 
-	.case-stat {
-		padding: 1rem 0.75rem;
-		border-right: 1px solid #222;
+	@media (prefers-reduced-motion: reduce) {
+		.ai-caret { animation: none; }
+		.ai-engines span { animation: none; }
 	}
 
-	.case-stat:last-child { border-right: none; }
-
-	.case-number {
-		display: block;
-		font-size: 1.5rem;
-		font-weight: 800;
-		color: #fff;
-		letter-spacing: -0.03em;
-		margin-bottom: 0.25rem;
-	}
-
-	.case-label {
-		display: block;
+	.clients-label {
+		text-align: center;
 		font-size: 0.72rem;
-		color: #b0b0b0;
-		line-height: 1.4;
-	}
-
-	.case-result {
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
 		color: #666;
-		font-size: 0.95rem;
-		line-height: 1.7;
+		margin-bottom: 1.75rem;
 	}
 
-	.case-result strong { color: #000; }
+	.clients-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem 4rem;
+	}
+
+	.client-logo {
+		font-size: clamp(1.3rem, 3.5vw, 2rem);
+		font-weight: 800;
+		letter-spacing: -0.03em;
+		color: #fff;
+		opacity: 0.5;
+		transition: opacity 0.25s ease;
+	}
+
+	.client-logo:hover { opacity: 1; }
+
+	.client-more {
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		font-weight: 800;
+		letter-spacing: -0.03em;
+		color: #FF2D78;
+		align-self: center;
+		white-space: nowrap;
+	}
 
 
 	/* ── Ticker ── */
@@ -1147,21 +1728,15 @@ const faqSchema = {
 	}
 
 	/* ── Responsive ── */
-	@media (max-width: 900px) {
-		.cases-grid { grid-template-columns: 1fr; }
-	}
-
 	@media (max-width: 600px) {
 		.services-grid { grid-template-columns: 1fr; }
+		.clients-row { gap: 1.5rem 2.5rem; }
 	}
 
 	@media (max-width: 700px) {
 		.stats { grid-template-columns: 1fr; }
 		.stat { border-right: none; border-bottom: 1px solid #222; }
 		.stat:last-child { border-bottom: none; }
-		.case-stats { grid-template-columns: 1fr; }
-		.case-stat { border-right: none; border-bottom: 1px solid #222; }
-		.case-stat:last-child { border-bottom: none; }
 		.form-row { grid-template-columns: 1fr; }
 		.footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
 		.service-item { gap: 1.5rem; }
@@ -1227,5 +1802,90 @@ const faqSchema = {
 	);
 
 	document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+	// ── AI search typewriter ──
+	const typed = document.getElementById('ai-typed');
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (typed && !prefersReducedMotion) {
+		const questions = [
+			'best UK electrolyte drinks for endurance athletes',
+			'which recovery protein is actually worth it',
+			'top hydration brands for marathon training',
+			'best supplements for cyclists on a budget',
+			'what should I drink during a long training ride',
+		];
+
+		let q = 0;
+		let i = 0;
+		let deleting = false;
+
+		typed.textContent = '';
+
+		const step = () => {
+			const text = questions[q];
+
+			if (!deleting) {
+				i++;
+				typed.textContent = text.slice(0, i);
+				if (i === text.length) {
+					deleting = true;
+					setTimeout(step, 2000); // hold the finished question
+					return;
+				}
+				setTimeout(step, 45 + Math.random() * 55);
+			} else {
+				i--;
+				typed.textContent = text.slice(0, i);
+				if (i === 0) {
+					deleting = false;
+					q = (q + 1) % questions.length;
+					setTimeout(step, 350);
+					return;
+				}
+				setTimeout(step, 25);
+			}
+		};
+
+		setTimeout(step, 700);
+	}
+
+	// ── Report mock: animate bars + count up on scroll into view ──
+	const report = document.querySelector('[data-report]');
+	if (report) {
+		const nums = report.querySelectorAll('.report-bar__num');
+
+		const countUp = () => {
+			nums.forEach((el) => {
+				const target = parseInt((el as HTMLElement).dataset.count || '0', 10);
+				if (prefersReducedMotion) { el.textContent = target + '%'; return; }
+				const duration = 1300;
+				const start = performance.now();
+				const tick = (now: number) => {
+					const p = Math.min(1, (now - start) / duration);
+					const eased = 1 - Math.pow(1 - p, 3);
+					el.textContent = Math.round(target * eased) + '%';
+					if (p < 1) requestAnimationFrame(tick);
+				};
+				requestAnimationFrame(tick);
+			});
+		};
+
+		if (prefersReducedMotion) {
+			report.classList.add('is-live');
+			countUp();
+		} else {
+			const reportObserver = new IntersectionObserver((entries, obs) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						report.classList.add('is-live');
+						countUp();
+						obs.disconnect();
+					}
+				});
+			}, { threshold: 0.35 });
+			reportObserver.observe(report);
+		}
+	}
 
 </script>
