@@ -2,64 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
 
+// Flip to true once /public/report-preview.png has been added.
+const SHOW_REPORT_PREVIEW = false;
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Generative Engine Optimisation (GEO)?",
+      "name": "What's in the monthly report?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is GEO different from SEO?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is AI visibility and why does it matter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need GEO if my SEO is already performing well?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to see results?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SEO results typically begin showing within 3–6 months, with significant growth compounding over time. GEO and AI visibility can move faster in some areas — particularly Google AI Overviews — though the landscape is evolving quickly. We set realistic timelines based on your current position and provide monthly reporting so you always know where things stand."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure AI visibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like \"best electrolyte powder for runners\" or \"which recovery protein is worth it\" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does a visibility audit cover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our visibility audit assesses your current performance across traditional search, AI Overviews, and LLM platforms. We examine technical SEO health, content quality and structure, entity clarity, backlink profile, and AI citation signals. You receive a prioritised action plan that identifies exactly where the biggest gains are and in what order to pursue them."
+        "text": "Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next."
       }
     },
     {
@@ -80,6 +35,22 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      "name": "How do you measure AI visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like \"best electrolyte powder for runners\" or \"which recovery protein is worth it\" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a visibility audit cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer — usually within about a week."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you work with Shopify brands?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -88,10 +59,42 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What's in the monthly report?",
+      "name": "What is AI visibility and why does it matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next."
+        "text": "AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan — I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Generative Engine Optimisation (GEO)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is GEO different from SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need GEO if my SEO is already performing well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy."
       }
     }
   ]
@@ -113,7 +116,7 @@ const faqSchema = {
 	<section class="hero" id="hero" data-nav-theme="dark">
 <div class="container">
 			<p class="eyebrow reveal">AI Visibility Monitoring · UK Sports &amp; Health Brands</p>
-			<h1 class="reveal reveal-delay-1">When someone asks ChatGPT for the best UK electrolyte powder, does your brand come up<span style="color:#FF2D78">?</span></h1>
+			<h1 class="reveal reveal-delay-1">When someone asks ChatGPT for the best UK electrolyte powder, does your brand come up<span style="color:#FF2D78;margin-left:-0.06em">?</span></h1>
 			<p class="hero-sub reveal reveal-delay-2">Project One gives UK sports and health brands a monthly picture of where they appear across the big AI assistants — and which competitors get recommended instead.</p>
 			<div class="hero-cta reveal reveal-delay-3">
 				<a href="#contact" class="btn">See where you stand</a>
@@ -136,7 +139,7 @@ const faqSchema = {
 					<p>A one-off audit of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories — electrolyte powders, protein, recovery supplements, running kit — and record where you appear and who gets recommended instead. You get a written report with a prioritised action plan, usually within about a week.</p>
 				</div>
 				<div class="service-box reveal service-box--highlight">
-					<span class="service-num">02 · Monthly</span>
+					<span class="service-num">02 · Recurring</span>
 					<h3>Monthly Monitoring</h3>
 					<p>Ongoing tracking across the same five assistants. Each month you get a report showing which questions surface your brand, how that's moved since last month, which competitors are gaining ground in your categories, and where the new gaps are. It turns a one-off snapshot into a trend you can act on.</p>
 				</div>
@@ -149,7 +152,8 @@ const faqSchema = {
 		</div>
 	</section>
 
-	<!-- Report preview — DARK -->
+	<!-- Report preview — DARK (hidden until the screenshot exists; flip SHOW_REPORT_PREVIEW in the frontmatter) -->
+	{SHOW_REPORT_PREVIEW && (
 	<section class="section dark" id="report" data-nav-theme="dark">
 		<div class="container">
 			<div class="section-header reveal">
@@ -157,14 +161,12 @@ const faqSchema = {
 				<p class="section-sub">Every report is a plain-English document you can read in ten minutes and hand straight to whoever makes the changes.</p>
 			</div>
 			<figure class="report-preview reveal">
-				<!-- Replace this slot with <img src="/report-preview.png" ... /> once the screenshot is supplied -->
-				<div class="report-preview__slot">
-					<span>Report preview — screenshot to be added at <code>/report-preview.png</code></span>
-				</div>
+				<img src="/report-preview.png" alt="A sample page from a monthly AI visibility report" />
 				<figcaption>A sample page from a monthly AI visibility report.</figcaption>
 			</figure>
 		</div>
 	</section>
+	)}
 
 	<!-- FAQs — DARK -->
 	<section class="section dark" id="faqs" data-nav-theme="dark">
@@ -176,115 +178,115 @@ const faqSchema = {
 				</div>
 			<div class="faq-list reveal">
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						What is Generative Engine Optimisation (GEO)?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							What's in the monthly report?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						How is GEO different from SEO?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							How does pricing work?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						What is AI visibility and why does it matter?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							Do you do the fixes as well?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						Do I need GEO if my SEO is already performing well?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							How do you measure AI visibility?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like "best electrolyte powder for runners" or "which recovery protein is worth it" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						How long does it take to see results?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>SEO results typically begin showing within 3–6 months, with significant growth compounding over time. GEO and AI visibility can move faster in some areas — particularly Google AI Overviews — though the landscape is evolving quickly. We set realistic timelines based on your current position and provide monthly reporting so you always know where things stand.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							What does a visibility audit cover?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>The Visibility Gap Report is a one-off snapshot of how your brand shows up when people ask AI assistants what to buy. I run buyer-voiced questions across ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude for your categories, then record where you appear, which competitors get recommended instead, and the source domains those recommendations lean on. You get a prioritised action plan written to be handed straight to your developer — usually within about a week.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						How do you measure AI visibility?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Every month I run a set of buyer-voiced questions — the natural-language prompts real shoppers actually type, like "best electrolyte powder for runners" or "which recovery protein is worth it" — across the five AI assistants that matter: ChatGPT, Google AI Overviews, Gemini, Perplexity and Claude. I record whether your brand is mentioned, where, and which competitors come up instead, using the DataForSEO AI Optimization API. Because it's tracked monthly, you see the trend rather than a one-off snapshot.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							Do you work with Shopify brands?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Yes. Most of the sports and health brands I work with are DTC ecommerce running on Shopify. The monitoring looks at how AI assistants talk about your brand and products, so it works the same whatever platform your store is built on.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						What does a visibility audit cover?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Our visibility audit assesses your current performance across traditional search, AI Overviews, and LLM platforms. We examine technical SEO health, content quality and structure, entity clarity, backlink profile, and AI citation signals. You receive a prioritised action plan that identifies exactly where the biggest gains are and in what order to pursue them.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							What is AI visibility and why does it matter?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>AI visibility refers to how prominently your brand, products, or services appear when large language models like ChatGPT or Claude respond to relevant queries. As more people turn to AI assistants instead of search engines, being absent from those responses means missing a growing share of your potential audience — even if your Google rankings are strong.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						How does pricing work?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Two options. The Visibility Gap Report is a one-off fixed fee. Monthly Monitoring is a monthly retainer with no long-term lock-in — you can stop whenever it stops being useful. I'll give you a quote after a short call, once I understand your categories and competitors.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							How long does it take to see results?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>The first picture arrives with the Visibility Gap Report, usually within about a week. After that, how quickly things move depends on your team acting on the plan — I diagnose and monitor, but the changes themselves are made by your developer or agency. Monitoring is what shows whether they worked. Bear in mind that the AI assistants re-crawl and re-index on their own timelines, so even once a change is live it can take weeks to show up in their answers.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						Do you do the fixes as well?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>No. I diagnose where your brand is invisible and monitor how that changes — I don't implement the changes myself. No technical work, no content writing, no link building. The action plan is written so you can hand it straight to your developer or agency.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							What is Generative Engine Optimisation (GEO)?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>GEO is the practice of optimising your content so it gets cited, referenced, and surfaced by AI-powered search engines — think Google AI Overviews, Perplexity, and ChatGPT. Where traditional SEO gets you onto a results page, GEO gets you into the answer itself.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						Do you work with Shopify brands?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Yes. Most of the sports and health brands I work with are DTC ecommerce running on Shopify. The monitoring looks at how AI assistants talk about your brand and products, so it works the same whatever platform your store is built on.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							How is GEO different from SEO?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>SEO is about ranking in Google's traditional blue-link results. GEO is about being the source that AI systems draw from when generating answers. The two complement each other — strong SEO foundations make GEO significantly more effective — but GEO requires its own distinct strategy around content structure, authority signals, and entity clarity.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq-item">
-					<button class="faq-question" aria-expanded="false">
-						What's in the monthly report?
-						<span class="faq-icon">+</span>
-					</button>
-					<div class="faq-answer">
-						<p>Which buyer questions surfaced your brand and which didn't, how that's moved since last month, which competitors are being recommended in your categories, and where the biggest new gaps are — with a short, prioritised list of what to tackle next.</p>
+					<div class="faq-item">
+						<button class="faq-question" aria-expanded="false">
+							Do I need GEO if my SEO is already performing well?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Yes. Good SEO performance doesn't automatically translate into AI visibility. AI systems draw from a wide range of signals — structured data, brand mentions, content clarity, and third-party citations — that require separate attention. Businesses with strong SEO have a head start, but GEO is a distinct discipline that needs its own strategy.</p>
+						</div>
 					</div>
-				</div>
 
 			</div>
 			</div>
@@ -351,7 +353,7 @@ const faqSchema = {
 					} catch {
 						status.textContent = 'Something went wrong. Please email me directly at hello@projectone.me';
 						status.style.color = '#E63946';
-						btn.textContent = 'Request Your Audit';
+						btn.textContent = 'See where I stand';
 						btn.disabled = false;
 					}
 
@@ -690,23 +692,6 @@ const faqSchema = {
 	/* ── Report preview ── */
 	.report-preview {
 		margin: 0;
-	}
-
-	.report-preview__slot {
-		border: 2px dashed #333;
-		border-radius: 16px;
-		aspect-ratio: 16 / 10;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		padding: 2rem;
-		color: #777;
-		font-size: 0.9rem;
-	}
-
-	.report-preview__slot code {
-		color: #b0b0b0;
 	}
 
 	.report-preview img {
